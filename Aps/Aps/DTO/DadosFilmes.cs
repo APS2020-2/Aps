@@ -18,7 +18,7 @@ namespace Aps
         public string dataLancamento { get; set; }
         public string duracao { get; set; }
         public int ano { get; set; }
-        public int generoId { get; set; }
+        public Genero genero { get; set; }
         public Diretor diretor { get; set; }
 
     }

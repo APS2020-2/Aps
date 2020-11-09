@@ -150,7 +150,7 @@ namespace Aps
                     lblGenero1.Text = "Gênero: ";
                     txtFilme1.Text = objData[i].titulo;
                     txtDuracao1.Text = objData[i].duracao;
-                    txtGenero1.Text = objData[i].generoId.ToString();
+                    txtGenero1.Text = objData[i].genero.nome;
                     txtLancamento1.Text = objData[i].dataLancamento.ToString();
                     txtIdioma1.Text = objData[i].idiomaOriginal;
                     txtDiretor1.Text = objData[i].diretor.nome;
@@ -182,7 +182,7 @@ namespace Aps
                     lblId2.Text = objData[i+1].id.ToString();
                     txtFilme2.Text = objData[i + 1].titulo;
                     txtDuracao2.Text = objData[i + 1].duracao;
-                    txtGenero2.Text = objData[i + 1].generoId.ToString();
+                    txtGenero2.Text = objData[i + 1].genero.nome;
                     txtLancamento2.Text = objData[i + 1].dataLancamento.ToString();
                     txtIdioma2.Text = objData[i + 1].idiomaOriginal;
                     txtDiretor2.Text = objData[i + 1].diretor.nome;
@@ -213,7 +213,7 @@ namespace Aps
                     lblId3.Text = objData[i+2].id.ToString();
                     txtFilme3.Text = objData[i + 2].titulo;
                     txtDuracao3.Text = objData[i + 2].duracao;
-                    txtGenero3.Text = objData[i + 2].generoId.ToString();
+                    txtGenero3.Text = objData[i + 2].genero.nome;
                     txtLancamento3.Text = objData[i + 2].dataLancamento.ToString();
                     txtIdioma3.Text = objData[i + 2].idiomaOriginal;
                     txtDiretor3.Text = objData[i + 2].diretor.nome;
@@ -245,7 +245,7 @@ namespace Aps
                     lblId4.Text = objData[i+3].id.ToString();
                     txtFilme4.Text = objData[i + 3].titulo;
                     txtDuracao4.Text = objData[i + 3].duracao;
-                    txtGenero4.Text = objData[i + 3].generoId.ToString();
+                    txtGenero4.Text = objData[i + 3].genero.nome;
                     txtLancamento4.Text = objData[i + 3].dataLancamento.ToString();
                     txtIdioma4.Text = objData[i + 3].idiomaOriginal;
                     txtDiretor4.Text = objData[i + 3].diretor.nome;
@@ -276,7 +276,7 @@ namespace Aps
                     lblId5.Text = objData[i+4].id.ToString();
                     txtFilme5.Text = objData[i + 4].titulo;
                     txtDuracao5.Text = objData[i + 4].duracao;
-                    txtGenero5.Text = objData[i + 4].generoId.ToString();
+                    txtGenero5.Text = objData[i + 4].genero.nome;
                     txtLancamento5.Text = objData[i + 4].dataLancamento.ToString();
                     txtIdioma5.Text = objData[i + 4].idiomaOriginal;
                     txtDiretor5.Text = objData[i + 4].diretor.nome;
@@ -307,7 +307,7 @@ namespace Aps
                     lblId6.Text = objData[i+5].id.ToString();
                     txtFilme6.Text = objData[i + 5].titulo;
                     txtDuracao6.Text = objData[i + 5].duracao;
-                    txtGenero6.Text = objData[i + 5].generoId.ToString();
+                    txtGenero6.Text = objData[i + 5].genero.nome;
                     txtLancamento6.Text = objData[i + 5].dataLancamento.ToString();
                     txtIdioma6.Text = objData[i + 5].idiomaOriginal;
                     txtDiretor6.Text = objData[i + 5].diretor.nome;
@@ -339,7 +339,7 @@ namespace Aps
                     lblId7.Text = objData[i+6].id.ToString();
                     txtFilme7.Text = objData[i + 6].titulo;
                     txtDuracao7.Text = objData[i + 6].duracao;
-                    txtGenero7.Text = objData[i + 6].generoId.ToString();
+                    txtGenero7.Text = objData[i + 6].genero.nome;
                     txtLancamento7.Text = objData[i + 6].dataLancamento.ToString();
                     txtIdioma7.Text = objData[i + 6].idiomaOriginal;
                     txtDiretor7.Text = objData[i + 6].diretor.nome;
@@ -371,7 +371,7 @@ namespace Aps
                     lblId8.Text = objData[i+7].id.ToString();
                     txtFilme8.Text = objData[i + 7].titulo;
                     txtDuracao8.Text = objData[i + 7].duracao;
-                    txtGenero8.Text = objData[i + 7].generoId.ToString();
+                    txtGenero8.Text = objData[i + 7].genero.nome;
                     txtLancamento8.Text = objData[i + 7].dataLancamento.ToString();
                     txtIdioma8.Text = objData[i + 7].idiomaOriginal;
                     txtDiretor8.Text = objData[i + 7].diretor.nome;
@@ -672,7 +672,7 @@ namespace Aps
             //        lblGenero1.Text = "Gênero: ";
             //        txtFilme1.Text = dto[i].titulo;
             //        txtDuracao1.Text = objData[i].duracao;
-            //        txtGenero1.Text = objData[i].generoId.ToString();
+            //        txtGenero1.Text = objData[i].genero.nome;
             //        txtLancamento1.Text = objData[i].dataLancamento.ToString();
             //        txtIdioma1.Text = objData[i].idiomaOriginal;
             //        txtDiretor1.Text = objData[i].diretor.nome;
@@ -702,7 +702,7 @@ namespace Aps
             //        lblGenero2.Text = "Gênero: ";
             //        txtFilme2.Text = objData[i + 1].titulo;
             //        txtDuracao2.Text = objData[i + 1].duracao;
-            //        txtGenero2.Text = objData[i + 1].generoId.ToString();
+            //        txtGenero2.Text = objData[i + 1].genero.nome;
             //        txtLancamento2.Text = objData[i + 1].dataLancamento.ToString();
             //        txtIdioma2.Text = objData[i + 1].idiomaOriginal;
             //        txtDiretor2.Text = objData[i + 1].diretor.nome;
@@ -730,7 +730,7 @@ namespace Aps
             //        lblGenero3.Text = "Gênero: ";
             //        txtFilme3.Text = objData[i + 2].titulo;
             //        txtDuracao3.Text = objData[i + 2].duracao;
-            //        txtGenero3.Text = objData[i + 2].generoId.ToString();
+            //        txtGenero3.Text = objData[i + 2].genero.nome;
             //        txtLancamento3.Text = objData[i + 2].dataLancamento.ToString();
             //        txtIdioma3.Text = objData[i + 2].idiomaOriginal;
             //        txtDiretor3.Text = objData[i + 2].diretor.nome;
@@ -759,7 +759,7 @@ namespace Aps
             //        lblGenero4.Text = "Gênero: ";
             //        txtFilme4.Text = objData[i + 3].titulo;
             //        txtDuracao4.Text = objData[i + 3].duracao;
-            //        txtGenero4.Text = objData[i + 3].generoId.ToString();
+            //        txtGenero4.Text = objData[i + 3].genero.nome;
             //        txtLancamento4.Text = objData[i + 3].dataLancamento.ToString();
             //        txtIdioma4.Text = objData[i + 3].idiomaOriginal;
             //        txtDiretor4.Text = objData[i + 3].diretor.nome;
@@ -788,7 +788,7 @@ namespace Aps
             //        lblGenero5.Text = "Gênero: ";
             //        txtFilme5.Text = objData[i + 4].titulo;
             //        txtDuracao5.Text = objData[i + 4].duracao;
-            //        txtGenero5.Text = objData[i + 4].generoId.ToString();
+            //        txtGenero5.Text = objData[i + 4].genero.nome;
             //        txtLancamento5.Text = objData[i + 4].dataLancamento.ToString();
             //        txtIdioma5.Text = objData[i + 4].idiomaOriginal;
             //        txtDiretor5.Text = objData[i + 4].diretor.nome;
@@ -817,7 +817,7 @@ namespace Aps
             //        lblGenero6.Text = "Gênero: ";
             //        txtFilme6.Text = objData[i + 5].titulo;
             //        txtDuracao6.Text = objData[i + 5].duracao;
-            //        txtGenero6.Text = objData[i + 5].generoId.ToString();
+            //        txtGenero6.Text = objData[i + 5].genero.nome;
             //        txtLancamento6.Text = objData[i + 5].dataLancamento.ToString();
             //        txtIdioma6.Text = objData[i + 5].idiomaOriginal;
             //        txtDiretor6.Text = objData[i + 5].diretor.nome;
@@ -847,7 +847,7 @@ namespace Aps
             //        lblGenero7.Text = "Gênero: ";
             //        txtFilme7.Text = objData[i + 6].titulo;
             //        txtDuracao7.Text = objData[i + 6].duracao;
-            //        txtGenero7.Text = objData[i + 6].generoId.ToString();
+            //        txtGenero7.Text = objData[i + 6].genero.nome;
             //        txtLancamento7.Text = objData[i + 6].dataLancamento.ToString();
             //        txtIdioma7.Text = objData[i + 6].idiomaOriginal;
             //        txtDiretor7.Text = objData[i + 6].diretor.nome;
@@ -877,7 +877,7 @@ namespace Aps
             //        lblGenero8.Text = "Gênero: ";
             //        txtFilme8.Text = objData[i + 7].titulo;
             //        txtDuracao8.Text = objData[i + 7].duracao;
-            //        txtGenero8.Text = objData[i + 7].generoId.ToString();
+            //        txtGenero8.Text = objData[i + 7].genero.nome;
             //        txtLancamento8.Text = objData[i + 7].dataLancamento.ToString();
             //        txtIdioma8.Text = objData[i + 7].idiomaOriginal;
             //        txtDiretor8.Text = objData[i + 7].diretor.nome;

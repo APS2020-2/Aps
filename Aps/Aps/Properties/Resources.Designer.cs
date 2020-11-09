@@ -83,6 +83,16 @@ namespace Aps.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap fundo1 {
+            get {
+                object obj = ResourceManager.GetObject("fundo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap imagejm {
             get {
                 object obj = ResourceManager.GetObject("imagejm", resourceCulture);

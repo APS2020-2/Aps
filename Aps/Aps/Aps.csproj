@@ -212,7 +212,10 @@
     <Compile Include="DTO\DadosFilmes.cs" />
     <Compile Include="Controller\FilmesApiResponse.cs" />
     <Compile Include="DTO\Diretor.cs" />
+    <Compile Include="DTO\DTO_Diretor.cs" />
     <Compile Include="DTO\DTO_Filme.cs" />
+    <Compile Include="DTO\DTO_Filmes.cs" />
+    <Compile Include="DTO\DTO_ListaGenero.cs" />
     <Compile Include="DTO\Genero.cs" />
     <Compile Include="Formularios\AddFilme.cs">
       <SubType>Form</SubType>
@@ -293,6 +296,7 @@
     <None Include="Resources\botao3.PNG" />
     <None Include="Resources\imagejm1.PNG" />
     <None Include="Resources\miyukiteste.png" />
+    <None Include="Resources\fundo3.png" />
     <Content Include="Resources\salvar.png" />
     <None Include="Resources\botao2.PNG" />
     <None Include="Resources\botao1.PNG" />

@@ -281,6 +281,7 @@
             this.lblIdFilme.Size = new System.Drawing.Size(46, 17);
             this.lblIdFilme.TabIndex = 24;
             this.lblIdFilme.Text = "label9";
+            this.lblIdFilme.Visible = false;
             // 
             // AddFilme
             // 

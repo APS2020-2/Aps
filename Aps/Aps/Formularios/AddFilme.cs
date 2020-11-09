@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,11 +17,15 @@ namespace Aps.Formularios
 
     public partial class AddFilme : Form
     {
-        public AddFilme()
+        public string forMetodo;
+        public int forID;
+        public AddFilme(string metodo,int id)
         {
+            forMetodo = metodo;
+            forID = id;
             InitializeComponent();
         }
-            
+
         private async void InserirFilmes(DTO_Filme dto)
         {
             try
@@ -31,10 +36,40 @@ namespace Aps.Formularios
                     {
                         if (response.IsSuccessStatusCode)
                         {
+                            
 
                             var serializedProduto = JsonConvert.SerializeObject(dto);
                             var content = new StringContent(serializedProduto, Encoding.UTF8, "application/json");
                             var result = await client.PostAsync("http://localhost:5000/CatalogoFilmesAPI/filme/", content);
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Não foi possível obter o produto : " + response.StatusCode);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private async void AtualizarFilmes(DTO_Filme dto)
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    using (var response = await client.GetAsync("http://localhost:5000/CatalogoFilmesAPI/filme/"))
+                    {
+                        if (response.IsSuccessStatusCode)
+                        {
+
+
+                            var serializedProduto = JsonConvert.SerializeObject(dto);
+                            var content = new StringContent(serializedProduto, Encoding.UTF8, "application/json");
+                            var result = await client.PutAsync("http://localhost:5000/CatalogoFilmesAPI/filme/"+forID+"", content);
 
                         }
                         else
@@ -54,9 +89,18 @@ namespace Aps.Formularios
         {
             try
             {
-
-                GetAllProdutos();
-                GetAllGenero();
+                if(forMetodo == "Incluir")
+                {
+                    GetAllProdutos();
+                    GetAllGenero();
+                }
+                else
+                {
+                    lblIdFilme.Text = forMetodo;
+                    GetAllAtt();
+                    GetAllProdutos();
+                    GetAllGenero();
+                }
             }
             catch (Exception)
             {
@@ -66,6 +110,18 @@ namespace Aps.Formularios
 
         }
 
+        public void AtualizarCampos()
+        {
+            try
+            {
+                lblIdFilme.Text = forMetodo;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
         private async void GetAllGenero()
         {
             try
@@ -83,17 +139,21 @@ namespace Aps.Formularios
 
                             var objGenero = JsonConvert.DeserializeObject<List<Genero>>(ProdutoJsonString);
 
-                            List<String> genero = new List<string>();
+                            List<string> genero = new List<string>();
+                            
                             var i = 0;
                             while (objGenero.Count > i)
                             {
                                 if (objGenero[i].nome != null)
                                 {
-                                    genero.Add(objGenero[i].nome);
+
+                                    genero.AddRange(new string[] { objGenero[i].nome });
                                 }
                                 i++;
                             }
-                            cmbGenero.DataSource = genero;
+                            List<string> lista = new List<string>();
+                            lista.AddRange(genero.Distinct());
+                            cmbGenero.DataSource = lista;
 
 
                         }
@@ -131,17 +191,69 @@ namespace Aps.Formularios
                             var i = 0;
                             // lista de nome do diretor
 
-                            List<string> lista = new List<string>();
+                            List<string> diretor  = new List<string>();
 
                             while (objData.Count > i)
                             {
                                 if (objData[i].nome != null)
                                 {
-                                    lista.Add(objData[i].nome);
+                                    diretor.AddRange(new string[] { objData[i].nome });
                                 }
                                 i++;
                             }
+                            List<string> lista = new List<string>();
+                            lista.AddRange(diretor.Distinct());
                             cmbDiretor.DataSource = lista;
+
+
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Não foi possível obter o produto : " + response.StatusCode);
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        private async void GetAllAtt()
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    using (var response = await client.GetAsync("http://localhost:5000/CatalogoFilmesAPI/filme/"))
+                    {
+                        if (response.IsSuccessStatusCode)
+                        {
+
+                            Form1 form = new Form1();
+
+                            var ProdutoJsonString = await response.Content.ReadAsStringAsync();
+
+                            var objData = JsonConvert.DeserializeObject<List<DTO_Filme>>(ProdutoJsonString);
+                            int i = 0;
+                            // lista de nome do diretor
+                            while(i < objData.Count)
+                            {
+                                if(objData[i].id == forID)
+                                {
+                                    txtNomeFilme.Text = objData[i].titulo;
+                                    TxtIdioma.Text = objData[i].idiomaOriginal;
+                                    txtDtLancamento.Text = objData[i].dataLancamento;
+                                    txtDuracao.Text = objData[i].duracao;
+                                    cmbGenero.SelectedItem = objData[i].genero;
+                                    cmbDiretor.SelectedItem = objData[i].diretor;
+                                    TxtDescricao.Text = objData[i].descricao;
+                                }
+                                i++;
+                            }
 
                         }
                         else
@@ -160,34 +272,36 @@ namespace Aps.Formularios
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-                try
+            try
+            {
+                if (txtNomeFilme.Text == "")
                 {
-                    if (txtNomeFilme.Text == "")
-                    {
-                        MessageBox.Show("ESCREVA NOME DO FILME");
-                    }
+                    MessageBox.Show("ESCREVA NOME DO FILME");
+                }
 
-                    else if (txtDtLancamento.Text == "")
-                    {
-                        MessageBox.Show("ESCREVA A DATA DE LANÇAMENTO");
-                    }
+                else if (txtDtLancamento.Text == "")
+                {
+                    MessageBox.Show("ESCREVA A DATA DE LANÇAMENTO");
+                }
 
-                    else if (TxtDescricao.Text == "")
-                    {
-                        MessageBox.Show("ESCREVA A DESCRIÇÃO");
-                    }
+                else if (TxtDescricao.Text == "")
+                {
+                    MessageBox.Show("ESCREVA A DESCRIÇÃO");
+                }
 
-                    else if (TxtDuracao.Text == "")
-                    {
-                        MessageBox.Show("ESCREVA A DURAÇÃO");
-                    }
+                else if (txtDuracao.Text == "")
+                {
+                    MessageBox.Show("ESCREVA A DURAÇÃO");
+                }
 
-                    else if (TxtIdioma.Text == "")
-                    {
-                        MessageBox.Show("ESCREVA O IDIOMA");
-                    }
+                else if (TxtIdioma.Text == "")
+                {
+                    MessageBox.Show("ESCREVA O IDIOMA");
+                }
 
-                    else
+                else
+                {
+                    if (forID == -1)
                     {
                         DTO_Filme dto = new DTO_Filme()
                         {
@@ -195,23 +309,39 @@ namespace Aps.Formularios
                             descricao = TxtDescricao.Text,
                             idiomaOriginal = TxtIdioma.Text,
                             dataLancamento = txtDtLancamento.Text,
-                            duracao = TxtDuracao.Text,
+                            duracao = txtDuracao.Text,
                             genero = new Genero { nome = cmbGenero.Text },
                             diretor = new Diretor { nome = cmbDiretor.Text }
                         };
-
                         InserirFilmes(dto);
-
                         MessageBox.Show("Adicionado com Sucesso!!");
-
-                        this.Close();
-
                     }
+                    else
+                    {
+
+                        DTO_Filme dto = new DTO_Filme()
+                        {
+                            id = forID,
+                            titulo = txtNomeFilme.Text,
+                            descricao = TxtDescricao.Text,
+                            idiomaOriginal = TxtIdioma.Text,
+                            dataLancamento = txtDtLancamento.Text,
+                            duracao = txtDuracao.Text,
+                            genero = new Genero { nome = cmbGenero.Text },
+                            diretor = new Diretor { nome = cmbDiretor.Text }
+                        };
+                        AtualizarFilmes(dto);
+                        MessageBox.Show("Atualizado com Sucesso!!");
+                    }
+
                 }
-                catch (Exception)
-                {
-                    throw;
-                }
+                this.Close();
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
 
         }

@@ -22,7 +22,6 @@ namespace Aps
         private void button1_Click(object sender, EventArgs e)
         {
             Form2 janela2 = new Form2();
-            Form1 janela1 = new Form1();
             this.Visible = false;
             janela2.Show();
 

@@ -155,13 +155,14 @@ namespace Aps
                     txtIdioma1.Text = objData[i].idiomaOriginal;
                     txtDiretor1.Text = objData[i].diretor.nome;
                     txtDescricao1.Text = objData[i].descricao;
-
+                    lblId1.Text = objData[i].id.ToString();
                     txtLancamento1.Visible = true;
                     lblLancamento1.Visible = true;
                     txtIdioma1.Visible = true;
                     lblIdioma1.Visible = true;
                     txtDiretor1.Visible = true;
                     lblDiretor1.Visible = true;
+                    btnAtt1.Visible = true;
                     panel2.Visible = true;
                     
                 }
@@ -178,6 +179,7 @@ namespace Aps
 
                     lblDuracao2.Text = "Duração: ";
                     lblGenero2.Text = "Gênero: ";
+                    lblId2.Text = objData[i+1].id.ToString();
                     txtFilme2.Text = objData[i + 1].titulo;
                     txtDuracao2.Text = objData[i + 1].duracao;
                     txtGenero2.Text = objData[i + 1].generoId.ToString();
@@ -185,6 +187,8 @@ namespace Aps
                     txtIdioma2.Text = objData[i + 1].idiomaOriginal;
                     txtDiretor2.Text = objData[i + 1].diretor.nome;
                     txtDescricao2.Text = objData[i + 1].descricao;
+
+                    btnAtt2.Visible = true;
                     txtLancamento2.Visible = true;
                     lblLancamento2.Visible = true;
                     txtIdioma2.Visible = true;
@@ -205,7 +209,8 @@ namespace Aps
                 {
 
                     lblDuracao3.Text = "Duração: ";
-                    lblGenero3.Text = "Gênero: ";
+                    lblGenero3.Text = "Gênero: "; 
+                    lblId3.Text = objData[i+2].id.ToString();
                     txtFilme3.Text = objData[i + 2].titulo;
                     txtDuracao3.Text = objData[i + 2].duracao;
                     txtGenero3.Text = objData[i + 2].generoId.ToString();
@@ -213,6 +218,8 @@ namespace Aps
                     txtIdioma3.Text = objData[i + 2].idiomaOriginal;
                     txtDiretor3.Text = objData[i + 2].diretor.nome;
                     txtDescricao3.Text = objData[i + 2].descricao;
+
+                    btnAtt3.Visible = true;
                     txtLancamento3.Visible = true;
                     lblLancamento3.Visible = true;
                     txtIdioma3.Visible = true;
@@ -235,6 +242,7 @@ namespace Aps
 
                     lblDuracao4.Text = "Duração: ";
                     lblGenero4.Text = "Gênero: ";
+                    lblId4.Text = objData[i+3].id.ToString();
                     txtFilme4.Text = objData[i + 3].titulo;
                     txtDuracao4.Text = objData[i + 3].duracao;
                     txtGenero4.Text = objData[i + 3].generoId.ToString();
@@ -243,6 +251,7 @@ namespace Aps
                     txtDiretor4.Text = objData[i + 3].diretor.nome;
                     txtDescricao4.Text = objData[i + 3].descricao;
 
+                    btnAtt4.Visible = true;
                     txtLancamento4.Visible = true;
                     lblLancamento4.Visible = true;
                     txtIdioma4.Visible = true;
@@ -264,6 +273,7 @@ namespace Aps
 
                     lblDuracao5.Text = "Duração: ";
                     lblGenero5.Text = "Gênero: ";
+                    lblId5.Text = objData[i+4].id.ToString();
                     txtFilme5.Text = objData[i + 4].titulo;
                     txtDuracao5.Text = objData[i + 4].duracao;
                     txtGenero5.Text = objData[i + 4].generoId.ToString();
@@ -272,6 +282,7 @@ namespace Aps
                     txtDiretor5.Text = objData[i + 4].diretor.nome;
                     txtDescricao5.Text = objData[i + 4].descricao;
 
+                    btnAtt5.Visible = true;
                     txtLancamento5.Visible = true;
                     lblLancamento5.Visible = true;
                     txtIdioma5.Visible = true;
@@ -293,6 +304,7 @@ namespace Aps
 
                     lblDuracao6.Text = "Duração: ";
                     lblGenero6.Text = "Gênero: ";
+                    lblId6.Text = objData[i+5].id.ToString();
                     txtFilme6.Text = objData[i + 5].titulo;
                     txtDuracao6.Text = objData[i + 5].duracao;
                     txtGenero6.Text = objData[i + 5].generoId.ToString();
@@ -301,6 +313,7 @@ namespace Aps
                     txtDiretor6.Text = objData[i + 5].diretor.nome;
                     txtDescricao6.Text = objData[i + 5].descricao;
 
+                    btnAtt6.Visible = true;
                     txtLancamento6.Visible = true;
                     lblLancamento6.Visible = true;
                     txtIdioma6.Visible = true;
@@ -323,6 +336,7 @@ namespace Aps
 
                     lblDuracao7.Text = "Duração: ";
                     lblGenero7.Text = "Gênero: ";
+                    lblId7.Text = objData[i+6].id.ToString();
                     txtFilme7.Text = objData[i + 6].titulo;
                     txtDuracao7.Text = objData[i + 6].duracao;
                     txtGenero7.Text = objData[i + 6].generoId.ToString();
@@ -331,6 +345,7 @@ namespace Aps
                     txtDiretor7.Text = objData[i + 6].diretor.nome;
                     txtDescricao7.Text = objData[i + 6].descricao;
 
+                    btnAtt7.Visible = true;
                     txtLancamento7.Visible = true;
                     lblLancamento7.Visible = true;
                     txtIdioma7.Visible = true;
@@ -353,6 +368,7 @@ namespace Aps
 
                     lblDuracao8.Text = "Duração: ";
                     lblGenero8.Text = "Gênero: ";
+                    lblId8.Text = objData[i+7].id.ToString();
                     txtFilme8.Text = objData[i + 7].titulo;
                     txtDuracao8.Text = objData[i + 7].duracao;
                     txtGenero8.Text = objData[i + 7].generoId.ToString();
@@ -361,6 +377,7 @@ namespace Aps
                     txtDiretor8.Text = objData[i + 7].diretor.nome;
                     txtDescricao8.Text = objData[i + 7].descricao;
 
+                    btnAtt8.Visible = true;
                     txtLancamento8.Visible = true;
                     lblLancamento8.Visible = true;
                     txtIdioma8.Visible = true;
@@ -419,6 +436,7 @@ namespace Aps
                     lblDiretor1.Visible = false;
                     txtDescricao1.Text = objData[i].bio;
                     panel2.Visible = true;
+                    btnAtt1.Visible = false;
 
                 }
                 else
@@ -445,6 +463,7 @@ namespace Aps
                     lblDiretor2.Visible = false;
                     txtDescricao2.Text = objData[i+1].bio;
                     panel3.Visible = true;
+                    btnAtt2.Visible = false;
                 }
                 else
                 {
@@ -468,6 +487,7 @@ namespace Aps
                     lblIdioma3.Visible = false;
                     txtDiretor3.Visible = false;
                     lblDiretor3.Visible = false;
+                    btnAtt3.Visible = false;
                     txtDescricao3.Text = objData[i+2].bio;
                     panel4.Visible = true;
                 }
@@ -493,6 +513,7 @@ namespace Aps
                     lblIdioma4.Visible = false;
                     txtDiretor4.Visible = false;
                     lblDiretor4.Visible = false;
+                    btnAtt4.Visible = false;
                     txtDescricao4.Text = objData[i+3].bio;
                     panel5.Visible = true;
                 }
@@ -510,6 +531,7 @@ namespace Aps
                     lblGenero5.Text = "Nascimento: ";
                     txtGenero5.Text = objData[i+4].dataNasc;
                     lblDuracao5.Text = "Lista de Filmes: ";
+                    btnAtt5.Visible = false;
                     //txtDuracao5.Text = objData[i+4].filmes.titulo;
 
                     txtLancamento5.Visible = false;
@@ -535,8 +557,8 @@ namespace Aps
                     lblGenero6.Text = "Nascimento: ";
                     txtGenero6.Text = objData[i+5].dataNasc;
                     lblDuracao6.Text = "Lista de Filmes: ";
-            //        txtDuracao6.Text = objData[i+5].filmes.titulo;
-
+                    //        txtDuracao6.Text = objData[i+5].filmes.titulo;
+                    btnAtt6.Visible = false;
                     txtLancamento6.Visible = false;
                     lblLancamento6.Visible = false;
                     txtIdioma6.Visible = false;
@@ -561,8 +583,8 @@ namespace Aps
                     lblGenero7.Text = "Nascimento: ";
                     txtGenero7.Text = objData[i+6].dataNasc;
                     lblDuracao7.Text = "Lista de Filmes: ";
-               //     txtDuracao7.Text = objData[i+6].filmes.titulo;
-
+                    //     txtDuracao7.Text = objData[i+6].filmes.titulo;
+                    btnAtt7.Visible = false;
                     txtLancamento7.Visible = false;
                     lblLancamento7.Visible = false;
                     txtIdioma7.Visible = false;
@@ -587,8 +609,8 @@ namespace Aps
                     lblGenero8.Text = "Nascimento: ";
                     txtGenero8.Text = objData[i+7].dataNasc;
                     lblDuracao8.Text = "Lista de Filmes: ";
-                //    txtDuracao8.Text = objData[i+7].filmes.titulo;
-
+                    //    txtDuracao8.Text = objData[i+7].filmes.titulo;
+                    btnAtt8.Visible = false;
                     txtLancamento8.Visible = false;
                     lblLancamento8.Visible = false;
                     txtIdioma8.Visible = false;
@@ -944,7 +966,7 @@ namespace Aps
         {
             try
             {
-                AddFilme addFilme = new AddFilme();
+                AddFilme addFilme = new AddFilme("Incluir", -1);
 
                 addFilme.Show();
             }
@@ -1025,6 +1047,70 @@ namespace Aps
 
                 throw ex;
             }
+        }
+
+        private void btnAtt1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = Convert.ToInt32(lblId1.Text);
+                AddFilme add = new AddFilme("Atualizar", id);
+                add.Show();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnAtt2_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(lblId2.Text);
+            AddFilme add = new AddFilme("Atualizar", id);
+            add.Show();
+        }
+
+        private void btnAtt3_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(lblId3.Text);
+            AddFilme add = new AddFilme("Atualizar", id);
+            add.Show();
+        }
+
+        private void btnAtt4_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(lblId4.Text);
+            AddFilme add = new AddFilme("Atualizar", id);
+            add.Show();
+        }
+
+        private void btnAtt5_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(lblId5.Text);
+            AddFilme add = new AddFilme("Atualizar", id);
+            add.Show();
+        }
+
+        private void btnAtt6_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(lblId6.Text);
+            AddFilme add = new AddFilme("Atualizar", id);
+            add.Show();
+        }
+
+        private void btnAtt7_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(lblId7.Text);
+            AddFilme add = new AddFilme("Atualizar", id);
+            add.Show();
+        }
+
+        private void btnAtt8_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(lblId8.Text);
+            AddFilme add = new AddFilme("Atualizar", id);
+            add.Show();
         }
     }
 }

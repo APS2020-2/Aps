@@ -38,7 +38,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.TxtIdioma = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.TxtDuracao = new System.Windows.Forms.TextBox();
+            this.txtDuracao = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.TxtDescricao = new System.Windows.Forms.TextBox();
@@ -48,6 +48,7 @@
             this.txtDtLancamento = new System.Windows.Forms.MaskedTextBox();
             this.btnCancelar = new System.Windows.Forms.PictureBox();
             this.btnSalvar = new System.Windows.Forms.PictureBox();
+            this.lblIdFilme = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalvar)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +58,7 @@
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(672, 43);
             this.panel1.TabIndex = 0;
@@ -93,7 +94,7 @@
             // 
             this.txtNomeFilme.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeFilme.Location = new System.Drawing.Point(21, 162);
-            this.txtNomeFilme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNomeFilme.Margin = new System.Windows.Forms.Padding(4);
             this.txtNomeFilme.Name = "txtNomeFilme";
             this.txtNomeFilme.Size = new System.Drawing.Size(260, 29);
             this.txtNomeFilme.TabIndex = 3;
@@ -141,7 +142,7 @@
             // 
             this.TxtIdioma.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtIdioma.Location = new System.Drawing.Point(396, 162);
-            this.TxtIdioma.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtIdioma.Margin = new System.Windows.Forms.Padding(4);
             this.TxtIdioma.Name = "TxtIdioma";
             this.TxtIdioma.Size = new System.Drawing.Size(260, 29);
             this.TxtIdioma.TabIndex = 9;
@@ -159,14 +160,14 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Duração";
             // 
-            // TxtDuracao
+            // txtDuracao
             // 
-            this.TxtDuracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDuracao.Location = new System.Drawing.Point(396, 245);
-            this.TxtDuracao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.TxtDuracao.Name = "TxtDuracao";
-            this.TxtDuracao.Size = new System.Drawing.Size(260, 29);
-            this.TxtDuracao.TabIndex = 11;
+            this.txtDuracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDuracao.Location = new System.Drawing.Point(396, 245);
+            this.txtDuracao.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDuracao.Name = "txtDuracao";
+            this.txtDuracao.Size = new System.Drawing.Size(260, 29);
+            this.txtDuracao.TabIndex = 11;
             // 
             // label7
             // 
@@ -198,7 +199,7 @@
             // 
             this.TxtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtDescricao.Location = new System.Drawing.Point(21, 411);
-            this.TxtDescricao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtDescricao.Margin = new System.Windows.Forms.Padding(4);
             this.TxtDescricao.Multiline = true;
             this.TxtDescricao.Name = "TxtDescricao";
             this.TxtDescricao.Size = new System.Drawing.Size(635, 104);
@@ -207,7 +208,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(21, 534);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(168, 28);
             this.button1.TabIndex = 16;
@@ -219,7 +220,7 @@
             this.cmbGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGenero.FormattingEnabled = true;
             this.cmbGenero.Location = new System.Drawing.Point(16, 335);
-            this.cmbGenero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbGenero.Margin = new System.Windows.Forms.Padding(4);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(265, 32);
             this.cmbGenero.TabIndex = 19;
@@ -229,7 +230,7 @@
             this.cmbDiretor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDiretor.FormattingEnabled = true;
             this.cmbDiretor.Location = new System.Drawing.Point(391, 335);
-            this.cmbDiretor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbDiretor.Margin = new System.Windows.Forms.Padding(4);
             this.cmbDiretor.Name = "cmbDiretor";
             this.cmbDiretor.Size = new System.Drawing.Size(265, 32);
             this.cmbDiretor.TabIndex = 20;
@@ -238,7 +239,7 @@
             // 
             this.txtDtLancamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDtLancamento.Location = new System.Drawing.Point(16, 245);
-            this.txtDtLancamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDtLancamento.Margin = new System.Windows.Forms.Padding(4);
             this.txtDtLancamento.Mask = "00/00/0000";
             this.txtDtLancamento.Name = "txtDtLancamento";
             this.txtDtLancamento.Size = new System.Drawing.Size(265, 29);
@@ -272,12 +273,22 @@
             this.btnSalvar.TabStop = false;
             this.btnSalvar.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // lblIdFilme
+            // 
+            this.lblIdFilme.AutoSize = true;
+            this.lblIdFilme.Location = new System.Drawing.Point(18, 112);
+            this.lblIdFilme.Name = "lblIdFilme";
+            this.lblIdFilme.Size = new System.Drawing.Size(46, 17);
+            this.lblIdFilme.TabIndex = 24;
+            this.lblIdFilme.Text = "label9";
+            // 
             // AddFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(672, 585);
+            this.Controls.Add(this.lblIdFilme);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtDtLancamento);
@@ -287,7 +298,7 @@
             this.Controls.Add(this.TxtDescricao);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.TxtDuracao);
+            this.Controls.Add(this.txtDuracao);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.TxtIdioma);
             this.Controls.Add(this.label5);
@@ -297,7 +308,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(690, 632);
             this.MinimumSize = new System.Drawing.Size(690, 632);
@@ -322,7 +333,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox TxtIdioma;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox TxtDuracao;
+        private System.Windows.Forms.TextBox txtDuracao;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox TxtDescricao;
@@ -332,5 +343,6 @@
         private System.Windows.Forms.MaskedTextBox txtDtLancamento;
         private System.Windows.Forms.PictureBox btnCancelar;
         private System.Windows.Forms.PictureBox btnSalvar;
+        private System.Windows.Forms.Label lblIdFilme;
     }
 }

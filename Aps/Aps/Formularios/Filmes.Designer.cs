@@ -32,8 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnComedia = new System.Windows.Forms.Button();
-            this.btnGenero = new System.Windows.Forms.Button();
             this.btnDrama = new System.Windows.Forms.Button();
+            this.btnGenero = new System.Windows.Forms.Button();
             this.btnTerror = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -88,6 +88,7 @@
             this.lblGenero5 = new System.Windows.Forms.Label();
             this.txtFilme5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAtt1 = new System.Windows.Forms.PictureBox();
             this.txtDiretor1 = new System.Windows.Forms.Label();
             this.txtIdioma1 = new System.Windows.Forms.Label();
             this.txtLancamento1 = new System.Windows.Forms.Label();
@@ -169,16 +170,39 @@
             this.txtIdioma4 = new System.Windows.Forms.Label();
             this.txtDiretor4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lblId1 = new System.Windows.Forms.Label();
+            this.lblId2 = new System.Windows.Forms.Label();
+            this.lblId3 = new System.Windows.Forms.Label();
+            this.lblId4 = new System.Windows.Forms.Label();
+            this.lblId5 = new System.Windows.Forms.Label();
+            this.lblId6 = new System.Windows.Forms.Label();
+            this.lblId7 = new System.Windows.Forms.Label();
+            this.lblId8 = new System.Windows.Forms.Label();
+            this.btnAtt2 = new System.Windows.Forms.PictureBox();
+            this.btnAtt3 = new System.Windows.Forms.PictureBox();
+            this.btnAtt4 = new System.Windows.Forms.PictureBox();
+            this.btnAtt5 = new System.Windows.Forms.PictureBox();
+            this.btnAtt6 = new System.Windows.Forms.PictureBox();
+            this.btnAtt7 = new System.Windows.Forms.PictureBox();
+            this.btnAtt8 = new System.Windows.Forms.PictureBox();
             this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel9.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt8)).BeginInit();
             this.SuspendLayout();
             // 
             // panel10
@@ -212,23 +236,6 @@
             this.btnComedia.Text = "Comédia";
             this.btnComedia.UseVisualStyleBackColor = false;
             // 
-            // btnGenero
-            // 
-            this.btnGenero.BackColor = System.Drawing.Color.Black;
-            this.btnGenero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnGenero.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGenero.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenero.ForeColor = System.Drawing.Color.White;
-            this.btnGenero.Location = new System.Drawing.Point(0, 0);
-            this.btnGenero.Margin = new System.Windows.Forms.Padding(4);
-            this.btnGenero.MinimumSize = new System.Drawing.Size(212, 39);
-            this.btnGenero.Name = "btnGenero";
-            this.btnGenero.Size = new System.Drawing.Size(220, 60);
-            this.btnGenero.TabIndex = 3;
-            this.btnGenero.Text = "Gênero";
-            this.btnGenero.UseVisualStyleBackColor = false;
-            this.btnGenero.Click += new System.EventHandler(this.btnGenero_Click);
-            // 
             // btnDrama
             // 
             this.btnDrama.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -245,6 +252,23 @@
             this.btnDrama.TabIndex = 5;
             this.btnDrama.Text = "Drama";
             this.btnDrama.UseVisualStyleBackColor = false;
+            // 
+            // btnGenero
+            // 
+            this.btnGenero.BackColor = System.Drawing.Color.Black;
+            this.btnGenero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnGenero.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGenero.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenero.ForeColor = System.Drawing.Color.White;
+            this.btnGenero.Location = new System.Drawing.Point(0, 0);
+            this.btnGenero.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGenero.MinimumSize = new System.Drawing.Size(212, 39);
+            this.btnGenero.Name = "btnGenero";
+            this.btnGenero.Size = new System.Drawing.Size(220, 60);
+            this.btnGenero.TabIndex = 3;
+            this.btnGenero.Text = "Gênero";
+            this.btnGenero.UseVisualStyleBackColor = false;
+            this.btnGenero.Click += new System.EventHandler(this.btnGenero_Click);
             // 
             // btnTerror
             // 
@@ -488,6 +512,8 @@
             this.panel8.BackColor = System.Drawing.Color.Transparent;
             this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
             this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel8.Controls.Add(this.btnAtt7);
+            this.panel8.Controls.Add(this.lblId7);
             this.panel8.Controls.Add(this.txtDiretor7);
             this.panel8.Controls.Add(this.txtIdioma7);
             this.panel8.Controls.Add(this.txtLancamento7);
@@ -514,6 +540,8 @@
             this.panel7.BackColor = System.Drawing.Color.Transparent;
             this.panel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel7.BackgroundImage")));
             this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel7.Controls.Add(this.btnAtt6);
+            this.panel7.Controls.Add(this.lblId6);
             this.panel7.Controls.Add(this.txtDiretor6);
             this.panel7.Controls.Add(this.txtIdioma6);
             this.panel7.Controls.Add(this.txtLancamento6);
@@ -705,6 +733,8 @@
             this.panel6.BackColor = System.Drawing.Color.Transparent;
             this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel6.Controls.Add(this.btnAtt5);
+            this.panel6.Controls.Add(this.lblId5);
             this.panel6.Controls.Add(this.txtDiretor5);
             this.panel6.Controls.Add(this.txtIdioma5);
             this.panel6.Controls.Add(this.txtLancamento5);
@@ -896,6 +926,8 @@
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.lblId1);
+            this.panel2.Controls.Add(this.btnAtt1);
             this.panel2.Controls.Add(this.txtDiretor1);
             this.panel2.Controls.Add(this.txtIdioma1);
             this.panel2.Controls.Add(this.txtLancamento1);
@@ -916,6 +948,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(375, 351);
             this.panel2.TabIndex = 27;
+            // 
+            // btnAtt1
+            // 
+            this.btnAtt1.Image = global::Aps.Properties.Resources.refresh;
+            this.btnAtt1.Location = new System.Drawing.Point(321, 5);
+            this.btnAtt1.Name = "btnAtt1";
+            this.btnAtt1.Size = new System.Drawing.Size(32, 38);
+            this.btnAtt1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAtt1.TabIndex = 16;
+            this.btnAtt1.TabStop = false;
+            this.btnAtt1.Click += new System.EventHandler(this.btnAtt1_Click);
             // 
             // txtDiretor1
             // 
@@ -1087,6 +1130,8 @@
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Controls.Add(this.btnAtt2);
+            this.panel3.Controls.Add(this.lblId2);
             this.panel3.Controls.Add(this.txtDiretor2);
             this.panel3.Controls.Add(this.txtIdioma2);
             this.panel3.Controls.Add(this.txtLancamento2);
@@ -1278,6 +1323,8 @@
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.Controls.Add(this.btnAtt3);
+            this.panel4.Controls.Add(this.lblId3);
             this.panel4.Controls.Add(this.txtDiretor3);
             this.panel4.Controls.Add(this.txtIdioma3);
             this.panel4.Controls.Add(this.txtLancamento3);
@@ -1482,6 +1529,8 @@
             this.panel9.BackColor = System.Drawing.Color.Transparent;
             this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
             this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel9.Controls.Add(this.btnAtt8);
+            this.panel9.Controls.Add(this.lblId8);
             this.panel9.Controls.Add(this.txtDiretor8);
             this.panel9.Controls.Add(this.txtIdioma8);
             this.panel9.Controls.Add(this.txtLancamento8);
@@ -1843,6 +1892,8 @@
             this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel5.Controls.Add(this.btnAtt4);
+            this.panel5.Controls.Add(this.lblId4);
             this.panel5.Controls.Add(this.txtDiretor4);
             this.panel5.Controls.Add(this.txtIdioma4);
             this.panel5.Controls.Add(this.txtLancamento4);
@@ -1863,6 +1914,163 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(375, 351);
             this.panel5.TabIndex = 30;
+            // 
+            // lblId1
+            // 
+            this.lblId1.AutoSize = true;
+            this.lblId1.Location = new System.Drawing.Point(172, 187);
+            this.lblId1.Name = "lblId1";
+            this.lblId1.Size = new System.Drawing.Size(46, 17);
+            this.lblId1.TabIndex = 17;
+            this.lblId1.Text = "label1";
+            this.lblId1.Visible = false;
+            // 
+            // lblId2
+            // 
+            this.lblId2.AutoSize = true;
+            this.lblId2.Location = new System.Drawing.Point(169, 188);
+            this.lblId2.Name = "lblId2";
+            this.lblId2.Size = new System.Drawing.Size(46, 17);
+            this.lblId2.TabIndex = 18;
+            this.lblId2.Text = "label1";
+            this.lblId2.Visible = false;
+            // 
+            // lblId3
+            // 
+            this.lblId3.AutoSize = true;
+            this.lblId3.Location = new System.Drawing.Point(169, 187);
+            this.lblId3.Name = "lblId3";
+            this.lblId3.Size = new System.Drawing.Size(46, 17);
+            this.lblId3.TabIndex = 19;
+            this.lblId3.Text = "label1";
+            this.lblId3.Visible = false;
+            // 
+            // lblId4
+            // 
+            this.lblId4.AutoSize = true;
+            this.lblId4.Location = new System.Drawing.Point(169, 187);
+            this.lblId4.Name = "lblId4";
+            this.lblId4.Size = new System.Drawing.Size(46, 17);
+            this.lblId4.TabIndex = 20;
+            this.lblId4.Text = "label1";
+            this.lblId4.Visible = false;
+            // 
+            // lblId5
+            // 
+            this.lblId5.AutoSize = true;
+            this.lblId5.Location = new System.Drawing.Point(169, 193);
+            this.lblId5.Name = "lblId5";
+            this.lblId5.Size = new System.Drawing.Size(46, 17);
+            this.lblId5.TabIndex = 21;
+            this.lblId5.Text = "label1";
+            this.lblId5.Visible = false;
+            // 
+            // lblId6
+            // 
+            this.lblId6.AutoSize = true;
+            this.lblId6.Location = new System.Drawing.Point(169, 193);
+            this.lblId6.Name = "lblId6";
+            this.lblId6.Size = new System.Drawing.Size(46, 17);
+            this.lblId6.TabIndex = 22;
+            this.lblId6.Text = "label1";
+            this.lblId6.Visible = false;
+            // 
+            // lblId7
+            // 
+            this.lblId7.AutoSize = true;
+            this.lblId7.Location = new System.Drawing.Point(168, 194);
+            this.lblId7.Name = "lblId7";
+            this.lblId7.Size = new System.Drawing.Size(46, 17);
+            this.lblId7.TabIndex = 23;
+            this.lblId7.Text = "label1";
+            this.lblId7.Visible = false;
+            // 
+            // lblId8
+            // 
+            this.lblId8.AutoSize = true;
+            this.lblId8.Location = new System.Drawing.Point(169, 193);
+            this.lblId8.Name = "lblId8";
+            this.lblId8.Size = new System.Drawing.Size(46, 17);
+            this.lblId8.TabIndex = 24;
+            this.lblId8.Text = "label1";
+            this.lblId8.Visible = false;
+            // 
+            // btnAtt2
+            // 
+            this.btnAtt2.Image = global::Aps.Properties.Resources.refresh;
+            this.btnAtt2.Location = new System.Drawing.Point(326, 6);
+            this.btnAtt2.Name = "btnAtt2";
+            this.btnAtt2.Size = new System.Drawing.Size(32, 38);
+            this.btnAtt2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAtt2.TabIndex = 18;
+            this.btnAtt2.TabStop = false;
+            this.btnAtt2.Click += new System.EventHandler(this.btnAtt2_Click);
+            // 
+            // btnAtt3
+            // 
+            this.btnAtt3.Image = global::Aps.Properties.Resources.refresh;
+            this.btnAtt3.Location = new System.Drawing.Point(326, 5);
+            this.btnAtt3.Name = "btnAtt3";
+            this.btnAtt3.Size = new System.Drawing.Size(32, 38);
+            this.btnAtt3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAtt3.TabIndex = 19;
+            this.btnAtt3.TabStop = false;
+            this.btnAtt3.Click += new System.EventHandler(this.btnAtt3_Click);
+            // 
+            // btnAtt4
+            // 
+            this.btnAtt4.Image = global::Aps.Properties.Resources.refresh;
+            this.btnAtt4.Location = new System.Drawing.Point(326, 5);
+            this.btnAtt4.Name = "btnAtt4";
+            this.btnAtt4.Size = new System.Drawing.Size(32, 38);
+            this.btnAtt4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAtt4.TabIndex = 20;
+            this.btnAtt4.TabStop = false;
+            this.btnAtt4.Click += new System.EventHandler(this.btnAtt4_Click);
+            // 
+            // btnAtt5
+            // 
+            this.btnAtt5.Image = global::Aps.Properties.Resources.refresh;
+            this.btnAtt5.Location = new System.Drawing.Point(326, 5);
+            this.btnAtt5.Name = "btnAtt5";
+            this.btnAtt5.Size = new System.Drawing.Size(32, 38);
+            this.btnAtt5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAtt5.TabIndex = 18;
+            this.btnAtt5.TabStop = false;
+            this.btnAtt5.Click += new System.EventHandler(this.btnAtt5_Click);
+            // 
+            // btnAtt6
+            // 
+            this.btnAtt6.Image = global::Aps.Properties.Resources.refresh;
+            this.btnAtt6.Location = new System.Drawing.Point(326, 5);
+            this.btnAtt6.Name = "btnAtt6";
+            this.btnAtt6.Size = new System.Drawing.Size(32, 38);
+            this.btnAtt6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAtt6.TabIndex = 22;
+            this.btnAtt6.TabStop = false;
+            this.btnAtt6.Click += new System.EventHandler(this.btnAtt6_Click);
+            // 
+            // btnAtt7
+            // 
+            this.btnAtt7.Image = global::Aps.Properties.Resources.refresh;
+            this.btnAtt7.Location = new System.Drawing.Point(326, 6);
+            this.btnAtt7.Name = "btnAtt7";
+            this.btnAtt7.Size = new System.Drawing.Size(32, 38);
+            this.btnAtt7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAtt7.TabIndex = 23;
+            this.btnAtt7.TabStop = false;
+            this.btnAtt7.Click += new System.EventHandler(this.btnAtt7_Click);
+            // 
+            // btnAtt8
+            // 
+            this.btnAtt8.Image = global::Aps.Properties.Resources.refresh;
+            this.btnAtt8.Location = new System.Drawing.Point(326, 5);
+            this.btnAtt8.Name = "btnAtt8";
+            this.btnAtt8.Size = new System.Drawing.Size(32, 38);
+            this.btnAtt8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAtt8.TabIndex = 24;
+            this.btnAtt8.TabStop = false;
+            this.btnAtt8.Click += new System.EventHandler(this.btnAtt8_Click);
             // 
             // Form2
             // 
@@ -1902,6 +2110,7 @@
             this.panel6.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -1911,6 +2120,13 @@
             this.panel9.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2055,5 +2271,21 @@
         private System.Windows.Forms.Label lblDuracao4;
         private System.Windows.Forms.Label lblGenero4;
         private System.Windows.Forms.Label txtFilme4;
+        private System.Windows.Forms.PictureBox btnAtt1;
+        private System.Windows.Forms.Label lblId1;
+        private System.Windows.Forms.Label lblId2;
+        private System.Windows.Forms.Label lblId3;
+        private System.Windows.Forms.Label lblId7;
+        private System.Windows.Forms.Label lblId6;
+        private System.Windows.Forms.Label lblId5;
+        private System.Windows.Forms.Label lblId8;
+        private System.Windows.Forms.Label lblId4;
+        private System.Windows.Forms.PictureBox btnAtt7;
+        private System.Windows.Forms.PictureBox btnAtt6;
+        private System.Windows.Forms.PictureBox btnAtt5;
+        private System.Windows.Forms.PictureBox btnAtt2;
+        private System.Windows.Forms.PictureBox btnAtt3;
+        private System.Windows.Forms.PictureBox btnAtt8;
+        private System.Windows.Forms.PictureBox btnAtt4;
     }
 }

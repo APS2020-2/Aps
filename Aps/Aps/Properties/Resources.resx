@@ -118,25 +118,49 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btIniciar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btIniciar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="miyuki1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\miyuki1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imagejm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagejm.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="miyukiteste" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\miyukiteste.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="botao1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\botao4.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btCancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btCancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fundo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fundo3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imagejm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imagejm.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btSalvar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btSalvar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="miyuki1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\miyuki1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btAddFilmes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btAddFilmes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btPgAnterior" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btPgAnterior.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fundo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Card" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btSair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btSair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btPgProximo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btPgProximo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

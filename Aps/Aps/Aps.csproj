@@ -298,6 +298,14 @@
     <None Include="Resources\miyukiteste.png" />
     <None Include="Resources\fundo3.png" />
     <None Include="Resources\refresh.png" />
+    <None Include="Resources\btSair.png" />
+    <None Include="Resources\btIniciar.png" />
+    <None Include="Resources\btCancelar.png" />
+    <None Include="Resources\btSalvar.png" />
+    <None Include="Resources\btAddFilmes.png" />
+    <None Include="Resources\Card.png" />
+    <None Include="Resources\btPgAnterior.png" />
+    <None Include="Resources\btPgProximo.png" />
     <Content Include="Resources\salvar.png" />
     <None Include="Resources\botao2.PNG" />
     <None Include="Resources\botao1.PNG" />

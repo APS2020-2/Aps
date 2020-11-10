@@ -1,29 +1,21 @@
 ﻿using Aps.DTO;
 using Aps.Formularios;
 using Newtonsoft.Json;
-using RestSharp;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Http;
 using System.Windows.Forms;
 
 namespace Aps
 {
-    public partial class Form2 : Form
+    public partial class ListaPrincipal : Form
     {
         public int m = 0;
         private bool isCollapsed;
         public List<DadosFilmes> filmeListTerror =  new List<DadosFilmes>();
         public List<DadosFilmes> filmeListComedia =  new List<DadosFilmes>();
         public List<DadosFilmes> filmeListDrama =  new List<DadosFilmes>();
-        public Form2()
+        public ListaPrincipal()
         {
             InitializeComponent();
 
@@ -44,7 +36,7 @@ namespace Aps
                         if (response.IsSuccessStatusCode)
                         {
 
-                            Form1 form = new Form1();
+                            TelaIncial form = new TelaIncial();
                             
                             var ProdutoJsonString = await response.Content.ReadAsStringAsync();
 
@@ -76,7 +68,7 @@ namespace Aps
                         if (response.IsSuccessStatusCode)
                         {
 
-                            Form1 form = new Form1();
+                            TelaIncial form = new TelaIncial();
 
                             var ProdutoJsonString = await response.Content.ReadAsStringAsync();
 
@@ -103,14 +95,14 @@ namespace Aps
         {
             try
             {
-                btnProxima.Enabled = true;
+                btPgProximo.Enabled = true;
                 if (inicio == "Inicio")
                 {
-                    btnAnterior.Enabled = false;
+                    btPgAnterior.Enabled = false;
                 }
                 else
                 {
-                    btnAnterior.Enabled = true;
+                    btPgAnterior.Enabled = true;
 
                 }
                 var m = 0;
@@ -194,7 +186,7 @@ namespace Aps
                     panel3.Hide();
                     if((i + 1) > objData.Count)
                     {
-                        btnProxima.Enabled = false;
+                        btPgProximo.Enabled = false;
                     }
                 }
                 if ((i + 1) < objData.Count)
@@ -225,7 +217,7 @@ namespace Aps
                     panel4.Hide();
                     if ((i + 2) > objData.Count)
                     {
-                        btnProxima.Enabled = false;
+                        btPgProximo.Enabled = false;
                     }
                 }
                 if ((i + 2) < objData.Count)
@@ -256,7 +248,7 @@ namespace Aps
                     panel5.Hide();
                     if ((i + 3) > objData.Count)
                     {
-                        btnProxima.Enabled = false;
+                        btPgProximo.Enabled = false;
                     }
                 }
                 if ((i + 3) < objData.Count)
@@ -288,7 +280,7 @@ namespace Aps
                     panel5.Hide();
                     if ((i + 4) > objData.Count)
                     {
-                        btnProxima.Enabled = false;
+                        btPgProximo.Enabled = false;
                     }
                 }
                 if ((i + 4) < objData.Count)
@@ -318,7 +310,7 @@ namespace Aps
                 {
                     if ((i + 5) > objData.Count)
                     {
-                        btnProxima.Enabled = false;
+                        btPgProximo.Enabled = false;
                     }
                     panel6.Hide();
                 }
@@ -351,7 +343,7 @@ namespace Aps
                     panel7.Hide();
                     if ((i + 6) > objData.Count)
                     {
-                        btnProxima.Enabled = false;
+                        btPgProximo.Enabled = false;
                     }
                 }
                 if ((i + 6) < objData.Count)
@@ -383,7 +375,7 @@ namespace Aps
                     panel8.Hide();
                     if ((i + 7) > objData.Count)
                     {
-                        btnProxima.Enabled = false;
+                        btPgProximo.Enabled = false;
                     }
                 }
                 if ((i + 7) < objData.Count)
@@ -413,7 +405,7 @@ namespace Aps
                 {
                     if ((i + 8) > objData.Count)
                     {
-                        btnProxima.Enabled = false;
+                        btPgProximo.Enabled = false;
                     }
                     panel9.Hide();
                 }
@@ -432,14 +424,14 @@ namespace Aps
         {
             try
             {
-                btnProxima.Enabled = true;
+                btPgProximo.Enabled = true;
                 if (inicio == "Inicio")
                 {
-                    btnAnterior.Enabled = false;
+                    btPgAnterior.Enabled = false;
                 }
                 else
                 {
-                    btnAnterior.Enabled = true;
+                    btPgAnterior.Enabled = true;
 
                 }
 
@@ -473,7 +465,7 @@ namespace Aps
                     panel3.Hide();
                     if ((i + 1) > objData.Count)
                     {
-                        btnProxima.Enabled = false;
+                        btPgProximo.Enabled = false;
                     }
                 }
                 if ((i + 1) < objData.Count)
@@ -499,7 +491,7 @@ namespace Aps
                     panel4.Hide();
                     if ((i + 2) > objData.Count)
                     {
-                        btnProxima.Enabled = false;
+                        btPgProximo.Enabled = false;
                     }
                 }
                 if ((i + 2) < objData.Count)
@@ -525,7 +517,7 @@ namespace Aps
                     panel5.Hide();
                     if ((i + 3) > objData.Count)
                     {
-                        btnProxima.Enabled = false;
+                        btPgProximo.Enabled = false;
                     }
                 }
                 if ((i + 3) < objData.Count)
@@ -551,7 +543,7 @@ namespace Aps
                     panel5.Hide();
                     if ((i + 4) > objData.Count)
                     {
-                        btnProxima.Enabled = false;
+                        btPgProximo.Enabled = false;
                     }
                 }
                 if ((i + 4) < objData.Count)
@@ -576,7 +568,7 @@ namespace Aps
                 {
                     if ((i + 5) > objData.Count)
                     {
-                        btnProxima.Enabled = false;
+                        btPgProximo.Enabled = false;
                     }
                     panel6.Hide();
                 }
@@ -603,7 +595,7 @@ namespace Aps
                     panel7.Hide();
                     if ((i + 6) > objData.Count)
                     {
-                        btnProxima.Enabled = false;
+                        btPgProximo.Enabled = false;
                     }
                 }
                 if ((i + 6) < objData.Count)
@@ -629,7 +621,7 @@ namespace Aps
                     panel8.Hide();
                     if ((i + 7) > objData.Count)
                     {
-                        btnProxima.Enabled = false;
+                        btPgProximo.Enabled = false;
                     }
                 }
                 if ((i + 7) < objData.Count)
@@ -653,7 +645,7 @@ namespace Aps
                 {
                     if ((i + 8) > objData.Count)
                     {
-                        btnProxima.Enabled = false;
+                        btPgProximo.Enabled = false;
                     }
                     panel9.Hide();
                 }
@@ -672,14 +664,14 @@ namespace Aps
             try
             {
                 List<int> generos = new List<int>();
-                btnProxima.Enabled = true;
+                btPgProximo.Enabled = true;
                 if (inicio == "Inicio")
                 {
-                    btnAnterior.Enabled = false;
+                    btPgAnterior.Enabled = false;
                 }
                 else
                 {
-                    btnAnterior.Enabled = true;
+                    btPgAnterior.Enabled = true;
 
                 }
                 int i = 0;
@@ -719,7 +711,7 @@ namespace Aps
                         panel3.Hide();
                         if ((i + 1) > filmeListTerror.Count)
                         {
-                            btnProxima.Enabled = false;
+                            btPgProximo.Enabled = false;
                         }
                     }
                     if ((i + 1) < filmeListTerror.Count)
@@ -747,7 +739,7 @@ namespace Aps
                         panel4.Hide();
                         if ((i + 2) > filmeListTerror.Count)
                         {
-                            btnProxima.Enabled = false;
+                            btPgProximo.Enabled = false;
                         }
                     }
                     if ((i + 2) < filmeListTerror.Count)
@@ -775,7 +767,7 @@ namespace Aps
                         panel5.Hide();
                         if ((i + 3) > filmeListTerror.Count)
                         {
-                            btnProxima.Enabled = false;
+                            btPgProximo.Enabled = false;
                         }
                     }
                     if ((i + 3) < filmeListTerror.Count)
@@ -805,7 +797,7 @@ namespace Aps
                         panel5.Hide();
                         if ((i + 4) > filmeListTerror.Count)
                         {
-                            btnProxima.Enabled = false;
+                            btPgProximo.Enabled = false;
                         }
                     }
                     if ((i + 4) < filmeListTerror.Count)
@@ -833,7 +825,7 @@ namespace Aps
                     {
                         if ((i + 5) > filmeListTerror.Count)
                         {
-                            btnProxima.Enabled = false;
+                            btPgProximo.Enabled = false;
                         }
                         panel6.Hide();
                     }
@@ -864,7 +856,7 @@ namespace Aps
                         panel7.Hide();
                         if ((i + 6) > filmeListTerror.Count)
                         {
-                            btnProxima.Enabled = false;
+                            btPgProximo.Enabled = false;
                         }
                     }
                     if ((i + 6) < filmeListTerror.Count)
@@ -894,7 +886,7 @@ namespace Aps
                         panel8.Hide();
                         if ((i + 7) > filmeListTerror.Count)
                         {
-                            btnProxima.Enabled = false;
+                            btPgProximo.Enabled = false;
                         }
                     }
                     if ((i + 7) < filmeListTerror.Count)
@@ -922,7 +914,7 @@ namespace Aps
                     {
                         if ((i + 8) > filmeListTerror.Count)
                         {
-                            btnProxima.Enabled = false;
+                            btPgProximo.Enabled = false;
                         }
                         panel9.Hide();
                     }
@@ -965,7 +957,7 @@ namespace Aps
                         panel3.Hide();
                         if ((i + 1) > filmeListDrama.Count)
                         {
-                            btnProxima.Enabled = false;
+                            btPgProximo.Enabled = false;
                         }
                     }
                     if ((i + 1) < filmeListDrama.Count)
@@ -993,7 +985,7 @@ namespace Aps
                         panel4.Hide();
                         if ((i + 2) > filmeListDrama.Count)
                         {
-                            btnProxima.Enabled = false;
+                            btPgProximo.Enabled = false;
                         }
                     }
                     if ((i + 2) < filmeListDrama.Count)
@@ -1021,7 +1013,7 @@ namespace Aps
                         panel5.Hide();
                         if ((i + 3) > filmeListDrama.Count)
                         {
-                            btnProxima.Enabled = false;
+                            btPgProximo.Enabled = false;
                         }
                     }
                     if ((i + 3) < filmeListDrama.Count)
@@ -1051,7 +1043,7 @@ namespace Aps
                         panel5.Hide();
                         if ((i + 4) > filmeListDrama.Count)
                         {
-                            btnProxima.Enabled = false;
+                            btPgProximo.Enabled = false;
                         }
                     }
                     if ((i + 4) < filmeListDrama.Count)
@@ -1079,7 +1071,7 @@ namespace Aps
                     {
                         if ((i + 5) > filmeListDrama.Count)
                         {
-                            btnProxima.Enabled = false;
+                            btPgProximo.Enabled = false;
                         }
                         panel6.Hide();
                     }
@@ -1110,7 +1102,7 @@ namespace Aps
                         panel7.Hide();
                         if ((i + 6) > filmeListDrama.Count)
                         {
-                            btnProxima.Enabled = false;
+                            btPgProximo.Enabled = false;
                         }
                     }
                     if ((i + 6) < filmeListDrama.Count)
@@ -1140,7 +1132,7 @@ namespace Aps
                         panel8.Hide();
                         if ((i + 7) > filmeListDrama.Count)
                         {
-                            btnProxima.Enabled = false;
+                            btPgProximo.Enabled = false;
                         }
                     }
                     if ((i + 7) < filmeListDrama.Count)
@@ -1168,7 +1160,7 @@ namespace Aps
                     {
                         if ((i + 8) > filmeListDrama.Count)
                         {
-                            btnProxima.Enabled = false;
+                            btPgProximo.Enabled = false;
                         }
                         panel9.Hide();
                     }
@@ -1214,7 +1206,7 @@ namespace Aps
                             panel3.Hide();
                             if ((i + 1) > filmeListComedia.Count)
                             {
-                                btnProxima.Enabled = false;
+                                btPgProximo.Enabled = false;
                             }
                         }
                         if ((i + 1) < filmeListComedia.Count)
@@ -1242,7 +1234,7 @@ namespace Aps
                             panel4.Hide();
                             if ((i + 2) > filmeListComedia.Count)
                             {
-                                btnProxima.Enabled = false;
+                                btPgProximo.Enabled = false;
                             }
                         }
                         if ((i + 2) < filmeListComedia.Count)
@@ -1270,7 +1262,7 @@ namespace Aps
                             panel5.Hide();
                             if ((i + 3) > filmeListComedia.Count)
                             {
-                                btnProxima.Enabled = false;
+                                btPgProximo.Enabled = false;
                             }
                         }
                         if ((i + 3) < filmeListComedia.Count)
@@ -1300,7 +1292,7 @@ namespace Aps
                             panel5.Hide();
                             if ((i + 4) > filmeListComedia.Count)
                             {
-                                btnProxima.Enabled = false;
+                                btPgProximo.Enabled = false;
                             }
                         }
                         if ((i + 4) < filmeListComedia.Count)
@@ -1328,7 +1320,7 @@ namespace Aps
                         {
                             if ((i + 5) > filmeListComedia.Count)
                             {
-                                btnProxima.Enabled = false;
+                                btPgProximo.Enabled = false;
                             }
                             panel6.Hide();
                         }
@@ -1359,7 +1351,7 @@ namespace Aps
                             panel7.Hide();
                             if ((i + 6) > filmeListComedia.Count)
                             {
-                                btnProxima.Enabled = false;
+                                btPgProximo.Enabled = false;
                             }
                         }
                         if ((i + 6) < filmeListComedia.Count)
@@ -1389,7 +1381,7 @@ namespace Aps
                             panel8.Hide();
                             if ((i + 7) > filmeListComedia.Count)
                             {
-                                btnProxima.Enabled = false;
+                                btPgProximo.Enabled = false;
                             }
                         }
                         if ((i + 7) < filmeListComedia.Count)
@@ -1417,7 +1409,7 @@ namespace Aps
                         {
                             if ((i + 8) > filmeListComedia.Count)
                             {
-                                btnProxima.Enabled = false;
+                                btPgProximo.Enabled = false;
                             }
                             panel9.Hide();
                         }
@@ -1439,47 +1431,6 @@ namespace Aps
             try
             {
 
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
-        public void btnProxima_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                m = m + 8;
-                GetAllProdutos(m,"Meio");
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
-        private void btnAnterior_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-                m = m - 8;
-                if (m > 0)
-                {
-                    GetAllProdutos(m, "Meio");
-                }
-                else
-                {
-                    if (m == 0)
-                    {
-                        btnAnterior.Enabled = false;
-                    }
-                    btnProxima.Enabled = true;
-                    GetAllProdutos(m, "Inicio");
-                }
             }
             catch (Exception ex)
             {
@@ -1664,6 +1615,52 @@ namespace Aps
             {
 
                 throw;
+            }
+        }
+
+        private void btSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btPgAnterior_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                m = m - 8;
+                if (m > 0)
+                {
+                    GetAllProdutos(m, "Meio");
+                }
+                else
+                {
+                    if (m == 0)
+                    {
+                        btPgAnterior.Enabled = false;
+                    }
+                    btPgProximo.Enabled = true;
+                    GetAllProdutos(m, "Inicio");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void btPgProximo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                m = m + 8;
+                GetAllProdutos(m, "Meio");
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
     }

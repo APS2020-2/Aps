@@ -2,14 +2,9 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Net.Http;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Aps.Formularios
@@ -133,7 +128,7 @@ namespace Aps.Formularios
                         if (response.IsSuccessStatusCode)
                         {
 
-                            Form1 form = new Form1();
+                            TelaIncial form = new TelaIncial();
 
                             var ProdutoJsonString = await response.Content.ReadAsStringAsync();
 
@@ -183,7 +178,7 @@ namespace Aps.Formularios
                         if (response.IsSuccessStatusCode)
                         {
 
-                            Form1 form = new Form1();
+                            TelaIncial form = new TelaIncial();
 
                             var ProdutoJsonString = await response.Content.ReadAsStringAsync();
 
@@ -233,7 +228,7 @@ namespace Aps.Formularios
                         if (response.IsSuccessStatusCode)
                         {
 
-                            Form1 form = new Form1();
+                            TelaIncial form = new TelaIncial();
 
                             var ProdutoJsonString = await response.Content.ReadAsStringAsync();
 
@@ -270,7 +265,13 @@ namespace Aps.Formularios
                 throw ex;
             }
         }
-        private void pictureBox1_Click(object sender, EventArgs e)
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btSalvar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -342,14 +343,6 @@ namespace Aps.Formularios
             {
                 throw;
             }
-
-
         }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
     }
 }

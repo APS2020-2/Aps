@@ -73,6 +73,86 @@ namespace Aps.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap btAddFilmes {
+            get {
+                object obj = ResourceManager.GetObject("btAddFilmes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap btCancelar {
+            get {
+                object obj = ResourceManager.GetObject("btCancelar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap btIniciar {
+            get {
+                object obj = ResourceManager.GetObject("btIniciar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap btPgAnterior {
+            get {
+                object obj = ResourceManager.GetObject("btPgAnterior", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap btPgProximo {
+            get {
+                object obj = ResourceManager.GetObject("btPgProximo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap btSair {
+            get {
+                object obj = ResourceManager.GetObject("btSair", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap btSalvar {
+            get {
+                object obj = ResourceManager.GetObject("btSalvar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Card {
+            get {
+                object obj = ResourceManager.GetObject("Card", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap fundo {
             get {
                 object obj = ResourceManager.GetObject("fundo", resourceCulture);

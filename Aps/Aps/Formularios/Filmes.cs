@@ -20,6 +20,9 @@ namespace Aps
     {
         public int m = 0;
         private bool isCollapsed;
+        public List<DadosFilmes> filmeListTerror =  new List<DadosFilmes>();
+        public List<DadosFilmes> filmeListComedia =  new List<DadosFilmes>();
+        public List<DadosFilmes> filmeListDrama =  new List<DadosFilmes>();
         public Form2()
         {
             InitializeComponent();
@@ -95,38 +98,7 @@ namespace Aps
             }
         }
 
-        private async void GetAllGeneroFilme(int i, string paginas,string genero)
-        {
-            try
-            {
-                using (var client = new HttpClient())
-                {
-                    using (var response = await client.GetAsync("http://localhost:5000/CatalogoFilmesAPI/diretor/"))
-                    {
-                        if (response.IsSuccessStatusCode)
-                        {
-
-                            Form1 form = new Form1();
-
-                            var ProdutoJsonString = await response.Content.ReadAsStringAsync();
-
-                            var objDiretor = JsonConvert.DeserializeObject<List<DTO_Filme>>(ProdutoJsonString);
-
-                            carregarGenero(objDiretor, i, paginas, genero);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Não foi possível obter o produto : " + response.StatusCode);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.ToString(), "Error");
-            }
-        }
+        
         public void carregarPainel(List<DadosFilmes> objData, int i, string inicio)
         {
             try
@@ -141,10 +113,55 @@ namespace Aps
                     btnAnterior.Enabled = true;
 
                 }
+                var m = 0;
+                while (m < objData.Count)
+                {
+                    if (objData[m].genero.nome == "Terror")
+                    {
+                        var terror = new List<DadosFilmes>(){(new DadosFilmes{
+                            titulo = objData[m].titulo,
+                            duracao = objData[m].duracao,
+                            genero = new Genero { nome = objData[m].genero.nome },
+                            dataLancamento = objData[i].dataLancamento.ToString(),
+                            idiomaOriginal = objData[i].idiomaOriginal,
+                            diretor = new Diretor { nome = objData[m].diretor.nome },
+                            descricao = objData[m].descricao
+                        }) };
+                        filmeListTerror.AddRange(terror);
 
+                    }
+                    else if (objData[m].genero.nome == "Comédia")
+                    {
+                        var comedia = new List<DadosFilmes>(){(new DadosFilmes{
+                            titulo = objData[m].titulo,
+                            duracao = objData[m].duracao,
+                            genero = new Genero { nome = objData[m].genero.nome },
+                            dataLancamento = objData[i].dataLancamento.ToString(),
+                            idiomaOriginal = objData[i].idiomaOriginal,
+                            diretor = new Diretor { nome = objData[m].diretor.nome },
+                            descricao = objData[m].descricao
+                        }) };
+
+                        filmeListComedia.AddRange(comedia);
+                    }
+                    else if (objData[m].genero.nome == "Drama")
+                    {
+                        var Drama = new List<DadosFilmes>(){(new DadosFilmes{
+                            titulo = objData[m].titulo,
+                            duracao = objData[m].duracao,
+                            genero = new Genero { nome = objData[m].genero.nome },
+                            dataLancamento = objData[i].dataLancamento.ToString(),
+                            idiomaOriginal = objData[i].idiomaOriginal,
+                            diretor = new Diretor { nome = objData[m].diretor.nome },
+                            descricao = objData[m].descricao
+                        }) };
+
+                        filmeListDrama.AddRange(Drama);
+                    }
+                    m++;
+                }
                 if (i < objData.Count)
                 {
-
 
                     lblDuracao1.Text = "Duração: ";
                     lblGenero1.Text = "Gênero: ";
@@ -164,10 +181,16 @@ namespace Aps
                     lblDiretor1.Visible = true;
                     btnAtt1.Visible = true;
                     panel2.Visible = true;
-                    
+                    lblSemFilme.Visible = false;
+
                 }
                 else
                 {
+                    if (objData.Count == 0)
+                    {
+                        panel2.Hide();
+                        lblSemFilme.Visible = true;
+                    }
                     panel3.Hide();
                     if((i + 1) > objData.Count)
                     {
@@ -195,7 +218,7 @@ namespace Aps
                     lblIdioma2.Visible = true;
                     txtDiretor2.Visible = true;
                     lblDiretor2.Visible = true;
-                    panel2.Visible = true;
+                    panel3.Visible = true;
                 }
                 else
                 {
@@ -437,10 +460,16 @@ namespace Aps
                     txtDescricao1.Text = objData[i].bio;
                     panel2.Visible = true;
                     btnAtt1.Visible = false;
-
+                    lblSemFilme.Visible = false;
                 }
                 else
                 {
+
+                    if (objData.Count == 0)
+                    {
+                        panel2.Hide();
+                        lblSemFilme.Visible = true;
+                    }
                     panel3.Hide();
                     if ((i + 1) > objData.Count)
                     {
@@ -638,275 +667,772 @@ namespace Aps
             }
         }
 
-        public void carregarGenero(List<DTO_Filme> objData, int i, string inicio, string genero)
+        public void carregarGenero(string inicio, string genero)
         {
-            //try
-            //{
-            //    List<int> generos = new List<int>();
-            //    btnProxima.Enabled = true;
-            //    if (inicio == "Inicio")
-            //    {
-            //        btnAnterior.Enabled = false;
-            //    }
-            //    else
-            //    {
-            //        btnAnterior.Enabled = true;
+            try
+            {
+                List<int> generos = new List<int>();
+                btnProxima.Enabled = true;
+                if (inicio == "Inicio")
+                {
+                    btnAnterior.Enabled = false;
+                }
+                else
+                {
+                    btnAnterior.Enabled = true;
 
-            //    }
-            //    var j = 0;
-            //    while(j < objData.Count)
-            //    {
-            //        if(objData[j].genero.ToString() == genero)
-            //        {
-            //            ;// DTO_ListaGenero
-            //        }
-                    
-            //        j++;
-            //    }
+                }
+                int i = 0;
+                if(genero == "Terror" )
+                {
 
-            //    if (i < generos.Count)
-            //    {
+                    if (filmeListTerror.Count> i && filmeListTerror.Count > 0)
+                    {
 
 
-            //        lblDuracao1.Text = "Duração: ";
-            //        lblGenero1.Text = "Gênero: ";
-            //        txtFilme1.Text = dto[i].titulo;
-            //        txtDuracao1.Text = objData[i].duracao;
-            //        txtGenero1.Text = objData[i].genero.nome;
-            //        txtLancamento1.Text = objData[i].dataLancamento.ToString();
-            //        txtIdioma1.Text = objData[i].idiomaOriginal;
-            //        txtDiretor1.Text = objData[i].diretor.nome;
-            //        txtDescricao1.Text = objData[i].descricao;
+                        lblDuracao1.Text = "Duração: ";
+                        lblGenero1.Text = "Gênero: ";
+                        txtFilme1.Text = filmeListTerror[i].titulo;
+                        txtDuracao1.Text = filmeListTerror[i].duracao;
+                        txtGenero1.Text = filmeListTerror[i].genero.nome;
+                        txtLancamento1.Text = filmeListTerror[i].dataLancamento.ToString();
+                        txtIdioma1.Text = filmeListTerror[i].idiomaOriginal;
+                        txtDiretor1.Text = filmeListTerror[i].diretor.nome;
+                        txtDescricao1.Text = filmeListTerror[i].descricao;
 
-            //        txtLancamento1.Visible = true;
-            //        lblLancamento1.Visible = true;
-            //        txtIdioma1.Visible = true;
-            //        lblIdioma1.Visible = true;
-            //        txtDiretor1.Visible = true;
-            //        lblDiretor1.Visible = true;
-            //        panel2.Visible = true;
+                        txtLancamento1.Visible = true;
+                        lblLancamento1.Visible = true;
+                        txtIdioma1.Visible = true;
+                        lblIdioma1.Visible = true;
+                        txtDiretor1.Visible = true;
+                        lblDiretor1.Visible = true;
+                        panel2.Visible = true;
+                        lblSemFilme.Visible = false;
+                    }
+                    else
+                    {
+                        if(filmeListTerror.Count == 0)
+                        {
+                            panel2.Hide();
+                            lblSemFilme.Visible = true;
+                        }
+                        panel3.Hide();
+                        if ((i + 1) > filmeListTerror.Count)
+                        {
+                            btnProxima.Enabled = false;
+                        }
+                    }
+                    if ((i + 1) < filmeListTerror.Count)
+                    {
 
-            //    }
-            //    else
-            //    {
-            //        panel3.Hide();
-            //        if ((i + 1) > objData.Count)
-            //        {
-            //            btnProxima.Enabled = false;
-            //        }
-            //    }
-            //    if ((i + 1) < objData.Count)
-            //    {
+                        lblDuracao2.Text = "Duração: ";
+                        lblGenero2.Text = "Gênero: ";
+                        txtFilme2.Text = filmeListTerror[i + 1].titulo;
+                        txtDuracao2.Text = filmeListTerror[i + 1].duracao;
+                        txtGenero2.Text = filmeListTerror[i + 1].genero.nome;
+                        txtLancamento2.Text = filmeListTerror[i + 1].dataLancamento.ToString();
+                        txtIdioma2.Text = filmeListTerror[i + 1].idiomaOriginal;
+                        txtDiretor2.Text = filmeListTerror[i + 1].diretor.nome;
+                        txtDescricao2.Text = filmeListTerror[i + 1].descricao;
+                        txtLancamento2.Visible = true;
+                        lblLancamento2.Visible = true;
+                        txtIdioma2.Visible = true;
+                        lblIdioma2.Visible = true;
+                        txtDiretor2.Visible = true;
+                        lblDiretor2.Visible = true;
+                        panel3.Visible = true;
+                    }
+                    else
+                    {
+                        panel4.Hide();
+                        if ((i + 2) > filmeListTerror.Count)
+                        {
+                            btnProxima.Enabled = false;
+                        }
+                    }
+                    if ((i + 2) < filmeListTerror.Count)
+                    {
 
-            //        lblDuracao2.Text = "Duração: ";
-            //        lblGenero2.Text = "Gênero: ";
-            //        txtFilme2.Text = objData[i + 1].titulo;
-            //        txtDuracao2.Text = objData[i + 1].duracao;
-            //        txtGenero2.Text = objData[i + 1].genero.nome;
-            //        txtLancamento2.Text = objData[i + 1].dataLancamento.ToString();
-            //        txtIdioma2.Text = objData[i + 1].idiomaOriginal;
-            //        txtDiretor2.Text = objData[i + 1].diretor.nome;
-            //        txtDescricao2.Text = objData[i + 1].descricao;
-            //        txtLancamento2.Visible = true;
-            //        lblLancamento2.Visible = true;
-            //        txtIdioma2.Visible = true;
-            //        lblIdioma2.Visible = true;
-            //        txtDiretor2.Visible = true;
-            //        lblDiretor2.Visible = true;
-            //        panel2.Visible = true;
-            //    }
-            //    else
-            //    {
-            //        panel4.Hide();
-            //        if ((i + 2) > objData.Count)
-            //        {
-            //            btnProxima.Enabled = false;
-            //        }
-            //    }
-            //    if ((i + 2) < objData.Count)
-            //    {
-
-            //        lblDuracao3.Text = "Duração: ";
-            //        lblGenero3.Text = "Gênero: ";
-            //        txtFilme3.Text = objData[i + 2].titulo;
-            //        txtDuracao3.Text = objData[i + 2].duracao;
-            //        txtGenero3.Text = objData[i + 2].genero.nome;
-            //        txtLancamento3.Text = objData[i + 2].dataLancamento.ToString();
-            //        txtIdioma3.Text = objData[i + 2].idiomaOriginal;
-            //        txtDiretor3.Text = objData[i + 2].diretor.nome;
-            //        txtDescricao3.Text = objData[i + 2].descricao;
-            //        txtLancamento3.Visible = true;
-            //        lblLancamento3.Visible = true;
-            //        txtIdioma3.Visible = true;
-            //        lblIdioma3.Visible = true;
-            //        txtDiretor3.Visible = true;
-            //        lblDiretor3.Visible = true;
-            //        panel4.Visible = true;
-            //    }
-            //    else
-            //    {
-            //        panel5.Hide();
-            //        if ((i + 3) > objData.Count)
-            //        {
-            //            btnProxima.Enabled = false;
-            //        }
-            //    }
-            //    if ((i + 3) < objData.Count)
-            //    {
-
-
-            //        lblDuracao4.Text = "Duração: ";
-            //        lblGenero4.Text = "Gênero: ";
-            //        txtFilme4.Text = objData[i + 3].titulo;
-            //        txtDuracao4.Text = objData[i + 3].duracao;
-            //        txtGenero4.Text = objData[i + 3].genero.nome;
-            //        txtLancamento4.Text = objData[i + 3].dataLancamento.ToString();
-            //        txtIdioma4.Text = objData[i + 3].idiomaOriginal;
-            //        txtDiretor4.Text = objData[i + 3].diretor.nome;
-            //        txtDescricao4.Text = objData[i + 3].descricao;
-
-            //        txtLancamento4.Visible = true;
-            //        lblLancamento4.Visible = true;
-            //        txtIdioma4.Visible = true;
-            //        lblIdioma4.Visible = true;
-            //        txtDiretor4.Visible = true;
-            //        lblDiretor4.Visible = true;
-            //        panel5.Visible = true;
-            //    }
-            //    else
-            //    {
-            //        panel5.Hide();
-            //        if ((i + 4) > objData.Count)
-            //        {
-            //            btnProxima.Enabled = false;
-            //        }
-            //    }
-            //    if ((i + 4) < objData.Count)
-            //    {
-
-            //        lblDuracao5.Text = "Duração: ";
-            //        lblGenero5.Text = "Gênero: ";
-            //        txtFilme5.Text = objData[i + 4].titulo;
-            //        txtDuracao5.Text = objData[i + 4].duracao;
-            //        txtGenero5.Text = objData[i + 4].genero.nome;
-            //        txtLancamento5.Text = objData[i + 4].dataLancamento.ToString();
-            //        txtIdioma5.Text = objData[i + 4].idiomaOriginal;
-            //        txtDiretor5.Text = objData[i + 4].diretor.nome;
-            //        txtDescricao5.Text = objData[i + 4].descricao;
-
-            //        txtLancamento5.Visible = true;
-            //        lblLancamento5.Visible = true;
-            //        txtIdioma5.Visible = true;
-            //        lblIdioma5.Visible = true;
-            //        txtDiretor5.Visible = true;
-            //        lblDiretor5.Visible = true;
-            //        panel6.Visible = true;
-            //    }
-            //    else
-            //    {
-            //        if ((i + 5) > objData.Count)
-            //        {
-            //            btnProxima.Enabled = false;
-            //        }
-            //        panel6.Hide();
-            //    }
-            //    if ((i + 5) < objData.Count)
-            //    {
-
-            //        lblDuracao6.Text = "Duração: ";
-            //        lblGenero6.Text = "Gênero: ";
-            //        txtFilme6.Text = objData[i + 5].titulo;
-            //        txtDuracao6.Text = objData[i + 5].duracao;
-            //        txtGenero6.Text = objData[i + 5].genero.nome;
-            //        txtLancamento6.Text = objData[i + 5].dataLancamento.ToString();
-            //        txtIdioma6.Text = objData[i + 5].idiomaOriginal;
-            //        txtDiretor6.Text = objData[i + 5].diretor.nome;
-            //        txtDescricao6.Text = objData[i + 5].descricao;
-
-            //        txtLancamento6.Visible = true;
-            //        lblLancamento6.Visible = true;
-            //        txtIdioma6.Visible = true;
-            //        lblIdioma6.Visible = true;
-            //        txtDiretor6.Visible = true;
-            //        lblDiretor6.Visible = true;
-            //        panel7.Visible = true;
-
-            //    }
-            //    else
-            //    {
-            //        panel7.Hide();
-            //        if ((i + 6) > objData.Count)
-            //        {
-            //            btnProxima.Enabled = false;
-            //        }
-            //    }
-            //    if ((i + 6) < objData.Count)
-            //    {
-
-            //        lblDuracao7.Text = "Duração: ";
-            //        lblGenero7.Text = "Gênero: ";
-            //        txtFilme7.Text = objData[i + 6].titulo;
-            //        txtDuracao7.Text = objData[i + 6].duracao;
-            //        txtGenero7.Text = objData[i + 6].genero.nome;
-            //        txtLancamento7.Text = objData[i + 6].dataLancamento.ToString();
-            //        txtIdioma7.Text = objData[i + 6].idiomaOriginal;
-            //        txtDiretor7.Text = objData[i + 6].diretor.nome;
-            //        txtDescricao7.Text = objData[i + 6].descricao;
-
-            //        txtLancamento7.Visible = true;
-            //        lblLancamento7.Visible = true;
-            //        txtIdioma7.Visible = true;
-            //        lblIdioma7.Visible = true;
-            //        txtDiretor7.Visible = true;
-            //        lblDiretor7.Visible = true;
-            //        panel8.Visible = true;
-
-            //    }
-            //    else
-            //    {
-            //        panel8.Hide();
-            //        if ((i + 7) > objData.Count)
-            //        {
-            //            btnProxima.Enabled = false;
-            //        }
-            //    }
-            //    if ((i + 7) < objData.Count)
-            //    {
-
-            //        lblDuracao8.Text = "Duração: ";
-            //        lblGenero8.Text = "Gênero: ";
-            //        txtFilme8.Text = objData[i + 7].titulo;
-            //        txtDuracao8.Text = objData[i + 7].duracao;
-            //        txtGenero8.Text = objData[i + 7].genero.nome;
-            //        txtLancamento8.Text = objData[i + 7].dataLancamento.ToString();
-            //        txtIdioma8.Text = objData[i + 7].idiomaOriginal;
-            //        txtDiretor8.Text = objData[i + 7].diretor.nome;
-            //        txtDescricao8.Text = objData[i + 7].descricao;
-
-            //        txtLancamento8.Visible = true;
-            //        lblLancamento8.Visible = true;
-            //        txtIdioma8.Visible = true;
-            //        lblIdioma8.Visible = true;
-            //        txtDiretor8.Visible = true;
-            //        lblDiretor8.Visible = true;
-            //        panel9.Visible = true;
-            //    }
-            //    else
-            //    {
-            //        if ((i + 8) > objData.Count)
-            //        {
-            //            btnProxima.Enabled = false;
-            //        }
-            //        panel9.Hide();
-            //    }
+                        lblDuracao3.Text = "Duração: ";
+                        lblGenero3.Text = "Gênero: ";
+                        txtFilme3.Text = filmeListTerror[i + 2].titulo;
+                        txtDuracao3.Text = filmeListTerror[i + 2].duracao;
+                        txtGenero3.Text = filmeListTerror[i + 2].genero.nome;
+                        txtLancamento3.Text = filmeListTerror[i + 2].dataLancamento.ToString();
+                        txtIdioma3.Text = filmeListTerror[i + 2].idiomaOriginal;
+                        txtDiretor3.Text = filmeListTerror[i + 2].diretor.nome;
+                        txtDescricao3.Text = filmeListTerror[i + 2].descricao;
+                        txtLancamento3.Visible = true;
+                        lblLancamento3.Visible = true;
+                        txtIdioma3.Visible = true;
+                        lblIdioma3.Visible = true;
+                        txtDiretor3.Visible = true;
+                        lblDiretor3.Visible = true;
+                        panel4.Visible = true;
+                    }
+                    else
+                    {
+                        panel5.Hide();
+                        if ((i + 3) > filmeListTerror.Count)
+                        {
+                            btnProxima.Enabled = false;
+                        }
+                    }
+                    if ((i + 3) < filmeListTerror.Count)
+                    {
 
 
-            //}
-            //catch (Exception)
-            //{
+                        lblDuracao4.Text = "Duração: ";
+                        lblGenero4.Text = "Gênero: ";
+                        txtFilme4.Text = filmeListTerror[i + 3].titulo;
+                        txtDuracao4.Text = filmeListTerror[i + 3].duracao;
+                        txtGenero4.Text = filmeListTerror[i + 3].genero.nome;
+                        txtLancamento4.Text = filmeListTerror[i + 3].dataLancamento.ToString();
+                        txtIdioma4.Text = filmeListTerror[i + 3].idiomaOriginal;
+                        txtDiretor4.Text = filmeListTerror[i + 3].diretor.nome;
+                        txtDescricao4.Text = filmeListTerror[i + 3].descricao;
 
-            //    throw;
-            //}
+                        txtLancamento4.Visible = true;
+                        lblLancamento4.Visible = true;
+                        txtIdioma4.Visible = true;
+                        lblIdioma4.Visible = true;
+                        txtDiretor4.Visible = true;
+                        lblDiretor4.Visible = true;
+                        panel5.Visible = true;
+                    }
+                    else
+                    {
+                        panel5.Hide();
+                        if ((i + 4) > filmeListTerror.Count)
+                        {
+                            btnProxima.Enabled = false;
+                        }
+                    }
+                    if ((i + 4) < filmeListTerror.Count)
+                    {
+
+                        lblDuracao5.Text = "Duração: ";
+                        lblGenero5.Text = "Gênero: ";
+                        txtFilme5.Text = filmeListTerror[i + 4].titulo;
+                        txtDuracao5.Text = filmeListTerror[i + 4].duracao;
+                        txtGenero5.Text = filmeListTerror[i + 4].genero.nome;
+                        txtLancamento5.Text = filmeListTerror[i + 4].dataLancamento.ToString();
+                        txtIdioma5.Text = filmeListTerror[i + 4].idiomaOriginal;
+                        txtDiretor5.Text = filmeListTerror[i + 4].diretor.nome;
+                        txtDescricao5.Text = filmeListTerror[i + 4].descricao;
+
+                        txtLancamento5.Visible = true;
+                        lblLancamento5.Visible = true;
+                        txtIdioma5.Visible = true;
+                        lblIdioma5.Visible = true;
+                        txtDiretor5.Visible = true;
+                        lblDiretor5.Visible = true;
+                        panel6.Visible = true;
+                    }
+                    else
+                    {
+                        if ((i + 5) > filmeListTerror.Count)
+                        {
+                            btnProxima.Enabled = false;
+                        }
+                        panel6.Hide();
+                    }
+                    if ((i + 5) < filmeListTerror.Count)
+                    {
+
+                        lblDuracao6.Text = "Duração: ";
+                        lblGenero6.Text = "Gênero: ";
+                        txtFilme6.Text = filmeListTerror[i + 5].titulo;
+                        txtDuracao6.Text = filmeListTerror[i + 5].duracao;
+                        txtGenero6.Text = filmeListTerror[i + 5].genero.nome;
+                        txtLancamento6.Text = filmeListTerror[i + 5].dataLancamento.ToString();
+                        txtIdioma6.Text = filmeListTerror[i + 5].idiomaOriginal;
+                        txtDiretor6.Text = filmeListTerror[i + 5].diretor.nome;
+                        txtDescricao6.Text = filmeListTerror[i + 5].descricao;
+
+                        txtLancamento6.Visible = true;
+                        lblLancamento6.Visible = true;
+                        txtIdioma6.Visible = true;
+                        lblIdioma6.Visible = true;
+                        txtDiretor6.Visible = true;
+                        lblDiretor6.Visible = true;
+                        panel7.Visible = true;
+
+                    }
+                    else
+                    {
+                        panel7.Hide();
+                        if ((i + 6) > filmeListTerror.Count)
+                        {
+                            btnProxima.Enabled = false;
+                        }
+                    }
+                    if ((i + 6) < filmeListTerror.Count)
+                    {
+
+                        lblDuracao7.Text = "Duração: ";
+                        lblGenero7.Text = "Gênero: ";
+                        txtFilme7.Text = filmeListTerror[i + 6].titulo;
+                        txtDuracao7.Text = filmeListTerror[i + 6].duracao;
+                        txtGenero7.Text = filmeListTerror[i + 6].genero.nome;
+                        txtLancamento7.Text = filmeListTerror[i + 6].dataLancamento.ToString();
+                        txtIdioma7.Text = filmeListTerror[i + 6].idiomaOriginal;
+                        txtDiretor7.Text = filmeListTerror[i + 6].diretor.nome;
+                        txtDescricao7.Text = filmeListTerror[i + 6].descricao;
+
+                        txtLancamento7.Visible = true;
+                        lblLancamento7.Visible = true;
+                        txtIdioma7.Visible = true;
+                        lblIdioma7.Visible = true;
+                        txtDiretor7.Visible = true;
+                        lblDiretor7.Visible = true;
+                        panel8.Visible = true;
+
+                    }
+                    else
+                    {
+                        panel8.Hide();
+                        if ((i + 7) > filmeListTerror.Count)
+                        {
+                            btnProxima.Enabled = false;
+                        }
+                    }
+                    if ((i + 7) < filmeListTerror.Count)
+                    {
+
+                        lblDuracao8.Text = "Duração: ";
+                        lblGenero8.Text = "Gênero: ";
+                        txtFilme8.Text = filmeListTerror[i + 7].titulo;
+                        txtDuracao8.Text = filmeListTerror[i + 7].duracao;
+                        txtGenero8.Text = filmeListTerror[i + 7].genero.nome;
+                        txtLancamento8.Text = filmeListTerror[i + 7].dataLancamento.ToString();
+                        txtIdioma8.Text = filmeListTerror[i + 7].idiomaOriginal;
+                        txtDiretor8.Text = filmeListTerror[i + 7].diretor.nome;
+                        txtDescricao8.Text = filmeListTerror[i + 7].descricao;
+
+                        txtLancamento8.Visible = true;
+                        lblLancamento8.Visible = true;
+                        txtIdioma8.Visible = true;
+                        lblIdioma8.Visible = true;
+                        txtDiretor8.Visible = true;
+                        lblDiretor8.Visible = true;
+                        panel9.Visible = true;
+                    }
+                    else
+                    {
+                        if ((i + 8) > filmeListTerror.Count)
+                        {
+                            btnProxima.Enabled = false;
+                        }
+                        panel9.Hide();
+                    }
+
+
+                }
+                if (genero == "Drama")
+                {
+
+                    if (filmeListDrama.Count > i && filmeListDrama.Count > 0)
+                    {
+
+
+                        lblDuracao1.Text = "Duração: ";
+                        lblGenero1.Text = "Gênero: ";
+                        txtFilme1.Text = filmeListDrama[i].titulo;
+                        txtDuracao1.Text = filmeListDrama[i].duracao;
+                        txtGenero1.Text = filmeListDrama[i].genero.nome;
+                        txtLancamento1.Text = filmeListDrama[i].dataLancamento.ToString();
+                        txtIdioma1.Text = filmeListDrama[i].idiomaOriginal;
+                        txtDiretor1.Text = filmeListDrama[i].diretor.nome;
+                        txtDescricao1.Text = filmeListDrama[i].descricao;
+
+                        txtLancamento1.Visible = true;
+                        lblLancamento1.Visible = true;
+                        txtIdioma1.Visible = true;
+                        lblIdioma1.Visible = true;
+                        txtDiretor1.Visible = true;
+                        lblDiretor1.Visible = true;
+                        panel2.Visible = true;
+                        lblSemFilme.Visible = false;
+                    }
+                    else
+                    {
+                        if (filmeListDrama.Count == 0)
+                        {
+                            panel2.Hide();
+                            lblSemFilme.Visible = true;
+                        }
+                        panel3.Hide();
+                        if ((i + 1) > filmeListDrama.Count)
+                        {
+                            btnProxima.Enabled = false;
+                        }
+                    }
+                    if ((i + 1) < filmeListDrama.Count)
+                    {
+
+                        lblDuracao2.Text = "Duração: ";
+                        lblGenero2.Text = "Gênero: ";
+                        txtFilme2.Text = filmeListDrama[i + 1].titulo;
+                        txtDuracao2.Text = filmeListDrama[i + 1].duracao;
+                        txtGenero2.Text = filmeListDrama[i + 1].genero.nome;
+                        txtLancamento2.Text = filmeListDrama[i + 1].dataLancamento.ToString();
+                        txtIdioma2.Text = filmeListDrama[i + 1].idiomaOriginal;
+                        txtDiretor2.Text = filmeListDrama[i + 1].diretor.nome;
+                        txtDescricao2.Text = filmeListDrama[i + 1].descricao;
+                        txtLancamento2.Visible = true;
+                        lblLancamento2.Visible = true;
+                        txtIdioma2.Visible = true;
+                        lblIdioma2.Visible = true;
+                        txtDiretor2.Visible = true;
+                        lblDiretor2.Visible = true;
+                        panel3.Visible = true;
+                    }
+                    else
+                    {
+                        panel4.Hide();
+                        if ((i + 2) > filmeListDrama.Count)
+                        {
+                            btnProxima.Enabled = false;
+                        }
+                    }
+                    if ((i + 2) < filmeListDrama.Count)
+                    {
+
+                        lblDuracao3.Text = "Duração: ";
+                        lblGenero3.Text = "Gênero: ";
+                        txtFilme3.Text = filmeListDrama[i + 2].titulo;
+                        txtDuracao3.Text = filmeListDrama[i + 2].duracao;
+                        txtGenero3.Text = filmeListDrama[i + 2].genero.nome;
+                        txtLancamento3.Text = filmeListDrama[i + 2].dataLancamento.ToString();
+                        txtIdioma3.Text = filmeListDrama[i + 2].idiomaOriginal;
+                        txtDiretor3.Text = filmeListDrama[i + 2].diretor.nome;
+                        txtDescricao3.Text = filmeListDrama[i + 2].descricao;
+                        txtLancamento3.Visible = true;
+                        lblLancamento3.Visible = true;
+                        txtIdioma3.Visible = true;
+                        lblIdioma3.Visible = true;
+                        txtDiretor3.Visible = true;
+                        lblDiretor3.Visible = true;
+                        panel4.Visible = true;
+                    }
+                    else
+                    {
+                        panel5.Hide();
+                        if ((i + 3) > filmeListDrama.Count)
+                        {
+                            btnProxima.Enabled = false;
+                        }
+                    }
+                    if ((i + 3) < filmeListDrama.Count)
+                    {
+
+
+                        lblDuracao4.Text = "Duração: ";
+                        lblGenero4.Text = "Gênero: ";
+                        txtFilme4.Text = filmeListDrama[i + 3].titulo;
+                        txtDuracao4.Text = filmeListDrama[i + 3].duracao;
+                        txtGenero4.Text = filmeListDrama[i + 3].genero.nome;
+                        txtLancamento4.Text = filmeListDrama[i + 3].dataLancamento.ToString();
+                        txtIdioma4.Text = filmeListDrama[i + 3].idiomaOriginal;
+                        txtDiretor4.Text = filmeListDrama[i + 3].diretor.nome;
+                        txtDescricao4.Text = filmeListDrama[i + 3].descricao;
+
+                        txtLancamento4.Visible = true;
+                        lblLancamento4.Visible = true;
+                        txtIdioma4.Visible = true;
+                        lblIdioma4.Visible = true;
+                        txtDiretor4.Visible = true;
+                        lblDiretor4.Visible = true;
+                        panel5.Visible = true;
+                    }
+                    else
+                    {
+                        panel5.Hide();
+                        if ((i + 4) > filmeListDrama.Count)
+                        {
+                            btnProxima.Enabled = false;
+                        }
+                    }
+                    if ((i + 4) < filmeListDrama.Count)
+                    {
+
+                        lblDuracao5.Text = "Duração: ";
+                        lblGenero5.Text = "Gênero: ";
+                        txtFilme5.Text = filmeListDrama[i + 4].titulo;
+                        txtDuracao5.Text = filmeListDrama[i + 4].duracao;
+                        txtGenero5.Text = filmeListDrama[i + 4].genero.nome;
+                        txtLancamento5.Text = filmeListDrama[i + 4].dataLancamento.ToString();
+                        txtIdioma5.Text = filmeListDrama[i + 4].idiomaOriginal;
+                        txtDiretor5.Text = filmeListDrama[i + 4].diretor.nome;
+                        txtDescricao5.Text = filmeListDrama[i + 4].descricao;
+
+                        txtLancamento5.Visible = true;
+                        lblLancamento5.Visible = true;
+                        txtIdioma5.Visible = true;
+                        lblIdioma5.Visible = true;
+                        txtDiretor5.Visible = true;
+                        lblDiretor5.Visible = true;
+                        panel6.Visible = true;
+                    }
+                    else
+                    {
+                        if ((i + 5) > filmeListDrama.Count)
+                        {
+                            btnProxima.Enabled = false;
+                        }
+                        panel6.Hide();
+                    }
+                    if ((i + 5) < filmeListDrama.Count)
+                    {
+
+                        lblDuracao6.Text = "Duração: ";
+                        lblGenero6.Text = "Gênero: ";
+                        txtFilme6.Text = filmeListDrama[i + 5].titulo;
+                        txtDuracao6.Text = filmeListDrama[i + 5].duracao;
+                        txtGenero6.Text = filmeListDrama[i + 5].genero.nome;
+                        txtLancamento6.Text = filmeListDrama[i + 5].dataLancamento.ToString();
+                        txtIdioma6.Text = filmeListDrama[i + 5].idiomaOriginal;
+                        txtDiretor6.Text = filmeListDrama[i + 5].diretor.nome;
+                        txtDescricao6.Text = filmeListDrama[i + 5].descricao;
+
+                        txtLancamento6.Visible = true;
+                        lblLancamento6.Visible = true;
+                        txtIdioma6.Visible = true;
+                        lblIdioma6.Visible = true;
+                        txtDiretor6.Visible = true;
+                        lblDiretor6.Visible = true;
+                        panel7.Visible = true;
+
+                    }
+                    else
+                    {
+                        panel7.Hide();
+                        if ((i + 6) > filmeListDrama.Count)
+                        {
+                            btnProxima.Enabled = false;
+                        }
+                    }
+                    if ((i + 6) < filmeListDrama.Count)
+                    {
+
+                        lblDuracao7.Text = "Duração: ";
+                        lblGenero7.Text = "Gênero: ";
+                        txtFilme7.Text = filmeListDrama[i + 6].titulo;
+                        txtDuracao7.Text = filmeListDrama[i + 6].duracao;
+                        txtGenero7.Text = filmeListDrama[i + 6].genero.nome;
+                        txtLancamento7.Text = filmeListDrama[i + 6].dataLancamento.ToString();
+                        txtIdioma7.Text = filmeListDrama[i + 6].idiomaOriginal;
+                        txtDiretor7.Text = filmeListDrama[i + 6].diretor.nome;
+                        txtDescricao7.Text = filmeListDrama[i + 6].descricao;
+
+                        txtLancamento7.Visible = true;
+                        lblLancamento7.Visible = true;
+                        txtIdioma7.Visible = true;
+                        lblIdioma7.Visible = true;
+                        txtDiretor7.Visible = true;
+                        lblDiretor7.Visible = true;
+                        panel8.Visible = true;
+
+                    }
+                    else
+                    {
+                        panel8.Hide();
+                        if ((i + 7) > filmeListDrama.Count)
+                        {
+                            btnProxima.Enabled = false;
+                        }
+                    }
+                    if ((i + 7) < filmeListDrama.Count)
+                    {
+
+                        lblDuracao8.Text = "Duração: ";
+                        lblGenero8.Text = "Gênero: ";
+                        txtFilme8.Text = filmeListDrama[i + 7].titulo;
+                        txtDuracao8.Text = filmeListDrama[i + 7].duracao;
+                        txtGenero8.Text = filmeListDrama[i + 7].genero.nome;
+                        txtLancamento8.Text = filmeListDrama[i + 7].dataLancamento.ToString();
+                        txtIdioma8.Text = filmeListDrama[i + 7].idiomaOriginal;
+                        txtDiretor8.Text = filmeListDrama[i + 7].diretor.nome;
+                        txtDescricao8.Text = filmeListDrama[i + 7].descricao;
+
+                        txtLancamento8.Visible = true;
+                        lblLancamento8.Visible = true;
+                        txtIdioma8.Visible = true;
+                        lblIdioma8.Visible = true;
+                        txtDiretor8.Visible = true;
+                        lblDiretor8.Visible = true;
+                        panel9.Visible = true;
+                    }
+                    else
+                    {
+                        if ((i + 8) > filmeListDrama.Count)
+                        {
+                            btnProxima.Enabled = false;
+                        }
+                        panel9.Hide();
+                    }
+
+
+                
+            }
+                if (genero == "Comédia")
+                {
+
+                    {
+
+                        if (filmeListComedia.Count > i && filmeListComedia.Count > 0)
+                        {
+
+
+                            lblDuracao1.Text = "Duração: ";
+                            lblGenero1.Text = "Gênero: ";
+                            txtFilme1.Text = filmeListComedia[i].titulo;
+                            txtDuracao1.Text = filmeListComedia[i].duracao;
+                            txtGenero1.Text = filmeListComedia[i].genero.nome;
+                            txtLancamento1.Text = filmeListComedia[i].dataLancamento.ToString();
+                            txtIdioma1.Text = filmeListComedia[i].idiomaOriginal;
+                            txtDiretor1.Text = filmeListComedia[i].diretor.nome;
+                            txtDescricao1.Text = filmeListComedia[i].descricao;
+
+                            txtLancamento1.Visible = true;
+                            lblLancamento1.Visible = true;
+                            txtIdioma1.Visible = true;
+                            lblIdioma1.Visible = true;
+                            txtDiretor1.Visible = true;
+                            lblDiretor1.Visible = true;
+                            panel2.Visible = true;
+                            lblSemFilme.Visible = false;
+                        }
+                        else
+                        {
+                            if (filmeListComedia.Count == 0)
+                            {
+                                panel2.Hide();
+                                lblSemFilme.Visible = true;
+                            }
+                            panel3.Hide();
+                            if ((i + 1) > filmeListComedia.Count)
+                            {
+                                btnProxima.Enabled = false;
+                            }
+                        }
+                        if ((i + 1) < filmeListComedia.Count)
+                        {
+
+                            lblDuracao2.Text = "Duração: ";
+                            lblGenero2.Text = "Gênero: ";
+                            txtFilme2.Text = filmeListComedia[i + 1].titulo;
+                            txtDuracao2.Text = filmeListComedia[i + 1].duracao;
+                            txtGenero2.Text = filmeListComedia[i + 1].genero.nome;
+                            txtLancamento2.Text = filmeListComedia[i + 1].dataLancamento.ToString();
+                            txtIdioma2.Text = filmeListComedia[i + 1].idiomaOriginal;
+                            txtDiretor2.Text = filmeListComedia[i + 1].diretor.nome;
+                            txtDescricao2.Text = filmeListComedia[i + 1].descricao;
+                            txtLancamento2.Visible = true;
+                            lblLancamento2.Visible = true;
+                            txtIdioma2.Visible = true;
+                            lblIdioma2.Visible = true;
+                            txtDiretor2.Visible = true;
+                            lblDiretor2.Visible = true;
+                            panel3.Visible = true;
+                        }
+                        else
+                        {
+                            panel4.Hide();
+                            if ((i + 2) > filmeListComedia.Count)
+                            {
+                                btnProxima.Enabled = false;
+                            }
+                        }
+                        if ((i + 2) < filmeListComedia.Count)
+                        {
+
+                            lblDuracao3.Text = "Duração: ";
+                            lblGenero3.Text = "Gênero: ";
+                            txtFilme3.Text = filmeListComedia[i + 2].titulo;
+                            txtDuracao3.Text = filmeListComedia[i + 2].duracao;
+                            txtGenero3.Text = filmeListComedia[i + 2].genero.nome;
+                            txtLancamento3.Text = filmeListComedia[i + 2].dataLancamento.ToString();
+                            txtIdioma3.Text = filmeListComedia[i + 2].idiomaOriginal;
+                            txtDiretor3.Text = filmeListComedia[i + 2].diretor.nome;
+                            txtDescricao3.Text = filmeListComedia[i + 2].descricao;
+                            txtLancamento3.Visible = true;
+                            lblLancamento3.Visible = true;
+                            txtIdioma3.Visible = true;
+                            lblIdioma3.Visible = true;
+                            txtDiretor3.Visible = true;
+                            lblDiretor3.Visible = true;
+                            panel4.Visible = true;
+                        }
+                        else
+                        {
+                            panel5.Hide();
+                            if ((i + 3) > filmeListComedia.Count)
+                            {
+                                btnProxima.Enabled = false;
+                            }
+                        }
+                        if ((i + 3) < filmeListComedia.Count)
+                        {
+
+
+                            lblDuracao4.Text = "Duração: ";
+                            lblGenero4.Text = "Gênero: ";
+                            txtFilme4.Text = filmeListComedia[i + 3].titulo;
+                            txtDuracao4.Text = filmeListComedia[i + 3].duracao;
+                            txtGenero4.Text = filmeListComedia[i + 3].genero.nome;
+                            txtLancamento4.Text = filmeListComedia[i + 3].dataLancamento.ToString();
+                            txtIdioma4.Text = filmeListComedia[i + 3].idiomaOriginal;
+                            txtDiretor4.Text = filmeListComedia[i + 3].diretor.nome;
+                            txtDescricao4.Text = filmeListComedia[i + 3].descricao;
+
+                            txtLancamento4.Visible = true;
+                            lblLancamento4.Visible = true;
+                            txtIdioma4.Visible = true;
+                            lblIdioma4.Visible = true;
+                            txtDiretor4.Visible = true;
+                            lblDiretor4.Visible = true;
+                            panel5.Visible = true;
+                        }
+                        else
+                        {
+                            panel5.Hide();
+                            if ((i + 4) > filmeListComedia.Count)
+                            {
+                                btnProxima.Enabled = false;
+                            }
+                        }
+                        if ((i + 4) < filmeListComedia.Count)
+                        {
+
+                            lblDuracao5.Text = "Duração: ";
+                            lblGenero5.Text = "Gênero: ";
+                            txtFilme5.Text = filmeListComedia[i + 4].titulo;
+                            txtDuracao5.Text = filmeListComedia[i + 4].duracao;
+                            txtGenero5.Text = filmeListComedia[i + 4].genero.nome;
+                            txtLancamento5.Text = filmeListComedia[i + 4].dataLancamento.ToString();
+                            txtIdioma5.Text = filmeListComedia[i + 4].idiomaOriginal;
+                            txtDiretor5.Text = filmeListComedia[i + 4].diretor.nome;
+                            txtDescricao5.Text = filmeListComedia[i + 4].descricao;
+
+                            txtLancamento5.Visible = true;
+                            lblLancamento5.Visible = true;
+                            txtIdioma5.Visible = true;
+                            lblIdioma5.Visible = true;
+                            txtDiretor5.Visible = true;
+                            lblDiretor5.Visible = true;
+                            panel6.Visible = true;
+                        }
+                        else
+                        {
+                            if ((i + 5) > filmeListComedia.Count)
+                            {
+                                btnProxima.Enabled = false;
+                            }
+                            panel6.Hide();
+                        }
+                        if ((i + 5) < filmeListComedia.Count)
+                        {
+
+                            lblDuracao6.Text = "Duração: ";
+                            lblGenero6.Text = "Gênero: ";
+                            txtFilme6.Text = filmeListComedia[i + 5].titulo;
+                            txtDuracao6.Text = filmeListComedia[i + 5].duracao;
+                            txtGenero6.Text = filmeListComedia[i + 5].genero.nome;
+                            txtLancamento6.Text = filmeListComedia[i + 5].dataLancamento.ToString();
+                            txtIdioma6.Text = filmeListComedia[i + 5].idiomaOriginal;
+                            txtDiretor6.Text = filmeListComedia[i + 5].diretor.nome;
+                            txtDescricao6.Text = filmeListComedia[i + 5].descricao;
+
+                            txtLancamento6.Visible = true;
+                            lblLancamento6.Visible = true;
+                            txtIdioma6.Visible = true;
+                            lblIdioma6.Visible = true;
+                            txtDiretor6.Visible = true;
+                            lblDiretor6.Visible = true;
+                            panel7.Visible = true;
+
+                        }
+                        else
+                        {
+                            panel7.Hide();
+                            if ((i + 6) > filmeListComedia.Count)
+                            {
+                                btnProxima.Enabled = false;
+                            }
+                        }
+                        if ((i + 6) < filmeListComedia.Count)
+                        {
+
+                            lblDuracao7.Text = "Duração: ";
+                            lblGenero7.Text = "Gênero: ";
+                            txtFilme7.Text = filmeListComedia[i + 6].titulo;
+                            txtDuracao7.Text = filmeListComedia[i + 6].duracao;
+                            txtGenero7.Text = filmeListComedia[i + 6].genero.nome;
+                            txtLancamento7.Text = filmeListComedia[i + 6].dataLancamento.ToString();
+                            txtIdioma7.Text = filmeListComedia[i + 6].idiomaOriginal;
+                            txtDiretor7.Text = filmeListComedia[i + 6].diretor.nome;
+                            txtDescricao7.Text = filmeListComedia[i + 6].descricao;
+
+                            txtLancamento7.Visible = true;
+                            lblLancamento7.Visible = true;
+                            txtIdioma7.Visible = true;
+                            lblIdioma7.Visible = true;
+                            txtDiretor7.Visible = true;
+                            lblDiretor7.Visible = true;
+                            panel8.Visible = true;
+
+                        }
+                        else
+                        {
+                            panel8.Hide();
+                            if ((i + 7) > filmeListComedia.Count)
+                            {
+                                btnProxima.Enabled = false;
+                            }
+                        }
+                        if ((i + 7) < filmeListComedia.Count)
+                        {
+
+                            lblDuracao8.Text = "Duração: ";
+                            lblGenero8.Text = "Gênero: ";
+                            txtFilme8.Text = filmeListComedia[i + 7].titulo;
+                            txtDuracao8.Text = filmeListComedia[i + 7].duracao;
+                            txtGenero8.Text = filmeListComedia[i + 7].genero.nome;
+                            txtLancamento8.Text = filmeListComedia[i + 7].dataLancamento.ToString();
+                            txtIdioma8.Text = filmeListComedia[i + 7].idiomaOriginal;
+                            txtDiretor8.Text = filmeListComedia[i + 7].diretor.nome;
+                            txtDescricao8.Text = filmeListComedia[i + 7].descricao;
+
+                            txtLancamento8.Visible = true;
+                            lblLancamento8.Visible = true;
+                            txtIdioma8.Visible = true;
+                            lblIdioma8.Visible = true;
+                            txtDiretor8.Visible = true;
+                            lblDiretor8.Visible = true;
+                            panel9.Visible = true;
+                        }
+                        else
+                        {
+                            if ((i + 8) > filmeListComedia.Count)
+                            {
+                                btnProxima.Enabled = false;
+                            }
+                            panel9.Hide();
+                        }
+
+
+
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -1036,18 +1562,7 @@ namespace Aps
             }
         }
 
-        private void btnTerror_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // GetAllGeneroFilme(0, "Inicio","Terror");
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
+       
 
         private void btnAtt1_Click(object sender, EventArgs e)
         {
@@ -1111,6 +1626,45 @@ namespace Aps
             int id = Convert.ToInt32(lblId8.Text);
             AddFilme add = new AddFilme("Atualizar", id);
             add.Show();
+        }
+
+        private void btnDrama_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                carregarGenero("Inicio", "Drama");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        private void btnTerror_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                carregarGenero("Inicio", "Terror");
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void btnComedia_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                carregarGenero("Inicio", "Comédia");
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

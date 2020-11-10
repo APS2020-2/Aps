@@ -55,7 +55,11 @@
             this.txtIdioma7 = new System.Windows.Forms.Label();
             this.txtDiretor7 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btnAtt7 = new System.Windows.Forms.PictureBox();
+            this.lblId7 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.btnAtt6 = new System.Windows.Forms.PictureBox();
+            this.lblId6 = new System.Windows.Forms.Label();
             this.txtDiretor6 = new System.Windows.Forms.Label();
             this.txtIdioma6 = new System.Windows.Forms.Label();
             this.txtLancamento6 = new System.Windows.Forms.Label();
@@ -72,6 +76,8 @@
             this.lblGenero6 = new System.Windows.Forms.Label();
             this.txtFilme6 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnAtt5 = new System.Windows.Forms.PictureBox();
+            this.lblId5 = new System.Windows.Forms.Label();
             this.txtDiretor5 = new System.Windows.Forms.Label();
             this.txtIdioma5 = new System.Windows.Forms.Label();
             this.txtLancamento5 = new System.Windows.Forms.Label();
@@ -88,6 +94,7 @@
             this.lblGenero5 = new System.Windows.Forms.Label();
             this.txtFilme5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblId1 = new System.Windows.Forms.Label();
             this.btnAtt1 = new System.Windows.Forms.PictureBox();
             this.txtDiretor1 = new System.Windows.Forms.Label();
             this.txtIdioma1 = new System.Windows.Forms.Label();
@@ -105,6 +112,8 @@
             this.lblGenero1 = new System.Windows.Forms.Label();
             this.txtFilme1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnAtt2 = new System.Windows.Forms.PictureBox();
+            this.lblId2 = new System.Windows.Forms.Label();
             this.txtDiretor2 = new System.Windows.Forms.Label();
             this.txtIdioma2 = new System.Windows.Forms.Label();
             this.txtLancamento2 = new System.Windows.Forms.Label();
@@ -121,6 +130,8 @@
             this.lblGenero2 = new System.Windows.Forms.Label();
             this.txtFilme2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnAtt3 = new System.Windows.Forms.PictureBox();
+            this.lblId3 = new System.Windows.Forms.Label();
             this.txtDiretor3 = new System.Windows.Forms.Label();
             this.txtIdioma3 = new System.Windows.Forms.Label();
             this.txtLancamento3 = new System.Windows.Forms.Label();
@@ -138,6 +149,8 @@
             this.txtFilme3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.btnAtt8 = new System.Windows.Forms.PictureBox();
+            this.lblId8 = new System.Windows.Forms.Label();
             this.txtDiretor8 = new System.Windows.Forms.Label();
             this.txtIdioma8 = new System.Windows.Forms.Label();
             this.txtLancamento8 = new System.Windows.Forms.Label();
@@ -170,47 +183,35 @@
             this.txtIdioma4 = new System.Windows.Forms.Label();
             this.txtDiretor4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.lblId1 = new System.Windows.Forms.Label();
-            this.lblId2 = new System.Windows.Forms.Label();
-            this.lblId3 = new System.Windows.Forms.Label();
-            this.lblId4 = new System.Windows.Forms.Label();
-            this.lblId5 = new System.Windows.Forms.Label();
-            this.lblId6 = new System.Windows.Forms.Label();
-            this.lblId7 = new System.Windows.Forms.Label();
-            this.lblId8 = new System.Windows.Forms.Label();
-            this.btnAtt2 = new System.Windows.Forms.PictureBox();
-            this.btnAtt3 = new System.Windows.Forms.PictureBox();
             this.btnAtt4 = new System.Windows.Forms.PictureBox();
-            this.btnAtt5 = new System.Windows.Forms.PictureBox();
-            this.btnAtt6 = new System.Windows.Forms.PictureBox();
-            this.btnAtt7 = new System.Windows.Forms.PictureBox();
-            this.btnAtt8 = new System.Windows.Forms.PictureBox();
+            this.lblId4 = new System.Windows.Forms.Label();
+            this.lblSemFilme = new System.Windows.Forms.Label();
             this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt7)).BeginInit();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt6)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt5)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAtt1)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt2)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel9.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtt2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtt3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtt4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtt5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtt6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtt7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAtt8)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel10
             // 
             this.panel10.Controls.Add(this.btnComedia);
             this.panel10.Controls.Add(this.btnDrama);
-            this.panel10.Controls.Add(this.btnGenero);
             this.panel10.Controls.Add(this.btnTerror);
+            this.panel10.Controls.Add(this.btnGenero);
             this.panel10.Location = new System.Drawing.Point(1494, 4);
             this.panel10.Margin = new System.Windows.Forms.Padding(4);
             this.panel10.MaximumSize = new System.Drawing.Size(215, 180);
@@ -235,6 +236,7 @@
             this.btnComedia.TabIndex = 6;
             this.btnComedia.Text = "Comédia";
             this.btnComedia.UseVisualStyleBackColor = false;
+            this.btnComedia.Click += new System.EventHandler(this.btnComedia_Click);
             // 
             // btnDrama
             // 
@@ -252,6 +254,7 @@
             this.btnDrama.TabIndex = 5;
             this.btnDrama.Text = "Drama";
             this.btnDrama.UseVisualStyleBackColor = false;
+            this.btnDrama.Click += new System.EventHandler(this.btnDrama_Click);
             // 
             // btnGenero
             // 
@@ -535,6 +538,27 @@
             this.panel8.Size = new System.Drawing.Size(375, 351);
             this.panel8.TabIndex = 19;
             // 
+            // btnAtt7
+            // 
+            this.btnAtt7.Image = global::Aps.Properties.Resources.refresh;
+            this.btnAtt7.Location = new System.Drawing.Point(326, 6);
+            this.btnAtt7.Name = "btnAtt7";
+            this.btnAtt7.Size = new System.Drawing.Size(32, 38);
+            this.btnAtt7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAtt7.TabIndex = 23;
+            this.btnAtt7.TabStop = false;
+            this.btnAtt7.Click += new System.EventHandler(this.btnAtt7_Click);
+            // 
+            // lblId7
+            // 
+            this.lblId7.AutoSize = true;
+            this.lblId7.Location = new System.Drawing.Point(168, 194);
+            this.lblId7.Name = "lblId7";
+            this.lblId7.Size = new System.Drawing.Size(46, 17);
+            this.lblId7.TabIndex = 23;
+            this.lblId7.Text = "label1";
+            this.lblId7.Visible = false;
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Transparent;
@@ -562,6 +586,27 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(375, 351);
             this.panel7.TabIndex = 25;
+            // 
+            // btnAtt6
+            // 
+            this.btnAtt6.Image = global::Aps.Properties.Resources.refresh;
+            this.btnAtt6.Location = new System.Drawing.Point(326, 5);
+            this.btnAtt6.Name = "btnAtt6";
+            this.btnAtt6.Size = new System.Drawing.Size(32, 38);
+            this.btnAtt6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAtt6.TabIndex = 22;
+            this.btnAtt6.TabStop = false;
+            this.btnAtt6.Click += new System.EventHandler(this.btnAtt6_Click);
+            // 
+            // lblId6
+            // 
+            this.lblId6.AutoSize = true;
+            this.lblId6.Location = new System.Drawing.Point(169, 193);
+            this.lblId6.Name = "lblId6";
+            this.lblId6.Size = new System.Drawing.Size(46, 17);
+            this.lblId6.TabIndex = 22;
+            this.lblId6.Text = "label1";
+            this.lblId6.Visible = false;
             // 
             // txtDiretor6
             // 
@@ -756,6 +801,27 @@
             this.panel6.Size = new System.Drawing.Size(375, 351);
             this.panel6.TabIndex = 26;
             // 
+            // btnAtt5
+            // 
+            this.btnAtt5.Image = global::Aps.Properties.Resources.refresh;
+            this.btnAtt5.Location = new System.Drawing.Point(326, 5);
+            this.btnAtt5.Name = "btnAtt5";
+            this.btnAtt5.Size = new System.Drawing.Size(32, 38);
+            this.btnAtt5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAtt5.TabIndex = 18;
+            this.btnAtt5.TabStop = false;
+            this.btnAtt5.Click += new System.EventHandler(this.btnAtt5_Click);
+            // 
+            // lblId5
+            // 
+            this.lblId5.AutoSize = true;
+            this.lblId5.Location = new System.Drawing.Point(169, 193);
+            this.lblId5.Name = "lblId5";
+            this.lblId5.Size = new System.Drawing.Size(46, 17);
+            this.lblId5.TabIndex = 21;
+            this.lblId5.Text = "label1";
+            this.lblId5.Visible = false;
+            // 
             // txtDiretor5
             // 
             this.txtDiretor5.AutoSize = true;
@@ -948,6 +1014,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(375, 351);
             this.panel2.TabIndex = 27;
+            // 
+            // lblId1
+            // 
+            this.lblId1.AutoSize = true;
+            this.lblId1.Location = new System.Drawing.Point(172, 187);
+            this.lblId1.Name = "lblId1";
+            this.lblId1.Size = new System.Drawing.Size(46, 17);
+            this.lblId1.TabIndex = 17;
+            this.lblId1.Text = "label1";
+            this.lblId1.Visible = false;
             // 
             // btnAtt1
             // 
@@ -1153,6 +1229,27 @@
             this.panel3.Size = new System.Drawing.Size(375, 351);
             this.panel3.TabIndex = 28;
             // 
+            // btnAtt2
+            // 
+            this.btnAtt2.Image = global::Aps.Properties.Resources.refresh;
+            this.btnAtt2.Location = new System.Drawing.Point(326, 6);
+            this.btnAtt2.Name = "btnAtt2";
+            this.btnAtt2.Size = new System.Drawing.Size(32, 38);
+            this.btnAtt2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAtt2.TabIndex = 18;
+            this.btnAtt2.TabStop = false;
+            this.btnAtt2.Click += new System.EventHandler(this.btnAtt2_Click);
+            // 
+            // lblId2
+            // 
+            this.lblId2.AutoSize = true;
+            this.lblId2.Location = new System.Drawing.Point(169, 188);
+            this.lblId2.Name = "lblId2";
+            this.lblId2.Size = new System.Drawing.Size(46, 17);
+            this.lblId2.TabIndex = 18;
+            this.lblId2.Text = "label1";
+            this.lblId2.Visible = false;
+            // 
             // txtDiretor2
             // 
             this.txtDiretor2.AutoSize = true;
@@ -1345,6 +1442,27 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(375, 351);
             this.panel4.TabIndex = 29;
+            // 
+            // btnAtt3
+            // 
+            this.btnAtt3.Image = global::Aps.Properties.Resources.refresh;
+            this.btnAtt3.Location = new System.Drawing.Point(326, 5);
+            this.btnAtt3.Name = "btnAtt3";
+            this.btnAtt3.Size = new System.Drawing.Size(32, 38);
+            this.btnAtt3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAtt3.TabIndex = 19;
+            this.btnAtt3.TabStop = false;
+            this.btnAtt3.Click += new System.EventHandler(this.btnAtt3_Click);
+            // 
+            // lblId3
+            // 
+            this.lblId3.AutoSize = true;
+            this.lblId3.Location = new System.Drawing.Point(169, 187);
+            this.lblId3.Name = "lblId3";
+            this.lblId3.Size = new System.Drawing.Size(46, 17);
+            this.lblId3.TabIndex = 19;
+            this.lblId3.Text = "label1";
+            this.lblId3.Visible = false;
             // 
             // txtDiretor3
             // 
@@ -1551,6 +1669,27 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(375, 351);
             this.panel9.TabIndex = 20;
+            // 
+            // btnAtt8
+            // 
+            this.btnAtt8.Image = global::Aps.Properties.Resources.refresh;
+            this.btnAtt8.Location = new System.Drawing.Point(326, 5);
+            this.btnAtt8.Name = "btnAtt8";
+            this.btnAtt8.Size = new System.Drawing.Size(32, 38);
+            this.btnAtt8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAtt8.TabIndex = 24;
+            this.btnAtt8.TabStop = false;
+            this.btnAtt8.Click += new System.EventHandler(this.btnAtt8_Click);
+            // 
+            // lblId8
+            // 
+            this.lblId8.AutoSize = true;
+            this.lblId8.Location = new System.Drawing.Point(169, 193);
+            this.lblId8.Name = "lblId8";
+            this.lblId8.Size = new System.Drawing.Size(46, 17);
+            this.lblId8.TabIndex = 24;
+            this.lblId8.Text = "label1";
+            this.lblId8.Visible = false;
             // 
             // txtDiretor8
             // 
@@ -1915,108 +2054,6 @@
             this.panel5.Size = new System.Drawing.Size(375, 351);
             this.panel5.TabIndex = 30;
             // 
-            // lblId1
-            // 
-            this.lblId1.AutoSize = true;
-            this.lblId1.Location = new System.Drawing.Point(172, 187);
-            this.lblId1.Name = "lblId1";
-            this.lblId1.Size = new System.Drawing.Size(46, 17);
-            this.lblId1.TabIndex = 17;
-            this.lblId1.Text = "label1";
-            this.lblId1.Visible = false;
-            // 
-            // lblId2
-            // 
-            this.lblId2.AutoSize = true;
-            this.lblId2.Location = new System.Drawing.Point(169, 188);
-            this.lblId2.Name = "lblId2";
-            this.lblId2.Size = new System.Drawing.Size(46, 17);
-            this.lblId2.TabIndex = 18;
-            this.lblId2.Text = "label1";
-            this.lblId2.Visible = false;
-            // 
-            // lblId3
-            // 
-            this.lblId3.AutoSize = true;
-            this.lblId3.Location = new System.Drawing.Point(169, 187);
-            this.lblId3.Name = "lblId3";
-            this.lblId3.Size = new System.Drawing.Size(46, 17);
-            this.lblId3.TabIndex = 19;
-            this.lblId3.Text = "label1";
-            this.lblId3.Visible = false;
-            // 
-            // lblId4
-            // 
-            this.lblId4.AutoSize = true;
-            this.lblId4.Location = new System.Drawing.Point(169, 187);
-            this.lblId4.Name = "lblId4";
-            this.lblId4.Size = new System.Drawing.Size(46, 17);
-            this.lblId4.TabIndex = 20;
-            this.lblId4.Text = "label1";
-            this.lblId4.Visible = false;
-            // 
-            // lblId5
-            // 
-            this.lblId5.AutoSize = true;
-            this.lblId5.Location = new System.Drawing.Point(169, 193);
-            this.lblId5.Name = "lblId5";
-            this.lblId5.Size = new System.Drawing.Size(46, 17);
-            this.lblId5.TabIndex = 21;
-            this.lblId5.Text = "label1";
-            this.lblId5.Visible = false;
-            // 
-            // lblId6
-            // 
-            this.lblId6.AutoSize = true;
-            this.lblId6.Location = new System.Drawing.Point(169, 193);
-            this.lblId6.Name = "lblId6";
-            this.lblId6.Size = new System.Drawing.Size(46, 17);
-            this.lblId6.TabIndex = 22;
-            this.lblId6.Text = "label1";
-            this.lblId6.Visible = false;
-            // 
-            // lblId7
-            // 
-            this.lblId7.AutoSize = true;
-            this.lblId7.Location = new System.Drawing.Point(168, 194);
-            this.lblId7.Name = "lblId7";
-            this.lblId7.Size = new System.Drawing.Size(46, 17);
-            this.lblId7.TabIndex = 23;
-            this.lblId7.Text = "label1";
-            this.lblId7.Visible = false;
-            // 
-            // lblId8
-            // 
-            this.lblId8.AutoSize = true;
-            this.lblId8.Location = new System.Drawing.Point(169, 193);
-            this.lblId8.Name = "lblId8";
-            this.lblId8.Size = new System.Drawing.Size(46, 17);
-            this.lblId8.TabIndex = 24;
-            this.lblId8.Text = "label1";
-            this.lblId8.Visible = false;
-            // 
-            // btnAtt2
-            // 
-            this.btnAtt2.Image = global::Aps.Properties.Resources.refresh;
-            this.btnAtt2.Location = new System.Drawing.Point(326, 6);
-            this.btnAtt2.Name = "btnAtt2";
-            this.btnAtt2.Size = new System.Drawing.Size(32, 38);
-            this.btnAtt2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnAtt2.TabIndex = 18;
-            this.btnAtt2.TabStop = false;
-            this.btnAtt2.Click += new System.EventHandler(this.btnAtt2_Click);
-            // 
-            // btnAtt3
-            // 
-            this.btnAtt3.Image = global::Aps.Properties.Resources.refresh;
-            this.btnAtt3.Location = new System.Drawing.Point(326, 5);
-            this.btnAtt3.Name = "btnAtt3";
-            this.btnAtt3.Size = new System.Drawing.Size(32, 38);
-            this.btnAtt3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnAtt3.TabIndex = 19;
-            this.btnAtt3.TabStop = false;
-            this.btnAtt3.Click += new System.EventHandler(this.btnAtt3_Click);
-            // 
             // btnAtt4
             // 
             this.btnAtt4.Image = global::Aps.Properties.Resources.refresh;
@@ -2028,49 +2065,26 @@
             this.btnAtt4.TabStop = false;
             this.btnAtt4.Click += new System.EventHandler(this.btnAtt4_Click);
             // 
-            // btnAtt5
+            // lblId4
             // 
-            this.btnAtt5.Image = global::Aps.Properties.Resources.refresh;
-            this.btnAtt5.Location = new System.Drawing.Point(326, 5);
-            this.btnAtt5.Name = "btnAtt5";
-            this.btnAtt5.Size = new System.Drawing.Size(32, 38);
-            this.btnAtt5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnAtt5.TabIndex = 18;
-            this.btnAtt5.TabStop = false;
-            this.btnAtt5.Click += new System.EventHandler(this.btnAtt5_Click);
+            this.lblId4.AutoSize = true;
+            this.lblId4.Location = new System.Drawing.Point(169, 187);
+            this.lblId4.Name = "lblId4";
+            this.lblId4.Size = new System.Drawing.Size(46, 17);
+            this.lblId4.TabIndex = 20;
+            this.lblId4.Text = "label1";
+            this.lblId4.Visible = false;
             // 
-            // btnAtt6
+            // lblSemFilme
             // 
-            this.btnAtt6.Image = global::Aps.Properties.Resources.refresh;
-            this.btnAtt6.Location = new System.Drawing.Point(326, 5);
-            this.btnAtt6.Name = "btnAtt6";
-            this.btnAtt6.Size = new System.Drawing.Size(32, 38);
-            this.btnAtt6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnAtt6.TabIndex = 22;
-            this.btnAtt6.TabStop = false;
-            this.btnAtt6.Click += new System.EventHandler(this.btnAtt6_Click);
-            // 
-            // btnAtt7
-            // 
-            this.btnAtt7.Image = global::Aps.Properties.Resources.refresh;
-            this.btnAtt7.Location = new System.Drawing.Point(326, 6);
-            this.btnAtt7.Name = "btnAtt7";
-            this.btnAtt7.Size = new System.Drawing.Size(32, 38);
-            this.btnAtt7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnAtt7.TabIndex = 23;
-            this.btnAtt7.TabStop = false;
-            this.btnAtt7.Click += new System.EventHandler(this.btnAtt7_Click);
-            // 
-            // btnAtt8
-            // 
-            this.btnAtt8.Image = global::Aps.Properties.Resources.refresh;
-            this.btnAtt8.Location = new System.Drawing.Point(326, 5);
-            this.btnAtt8.Name = "btnAtt8";
-            this.btnAtt8.Size = new System.Drawing.Size(32, 38);
-            this.btnAtt8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnAtt8.TabIndex = 24;
-            this.btnAtt8.TabStop = false;
-            this.btnAtt8.Click += new System.EventHandler(this.btnAtt8_Click);
+            this.lblSemFilme.AutoSize = true;
+            this.lblSemFilme.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSemFilme.Location = new System.Drawing.Point(513, 494);
+            this.lblSemFilme.Name = "lblSemFilme";
+            this.lblSemFilme.Size = new System.Drawing.Size(683, 55);
+            this.lblSemFilme.TabIndex = 33;
+            this.lblSemFilme.Text = "Nenhum Filme Foi encontrado.";
+            this.lblSemFilme.Visible = false;
             // 
             // Form2
             // 
@@ -2080,6 +2094,7 @@
             this.BackgroundImage = global::Aps.Properties.Resources.fundo1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1853, 899);
+            this.Controls.Add(this.lblSemFilme);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.panel9);
@@ -2104,30 +2119,31 @@
             this.panel10.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt7)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt6)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt5)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAtt1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtt8)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtt2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtt3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAtt4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtt5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtt6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtt7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtt8)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -2287,5 +2303,6 @@
         private System.Windows.Forms.PictureBox btnAtt3;
         private System.Windows.Forms.PictureBox btnAtt8;
         private System.Windows.Forms.PictureBox btnAtt4;
+        private System.Windows.Forms.Label lblSemFilme;
     }
 }
